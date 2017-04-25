@@ -95,6 +95,33 @@ val pero = jozo?.let{Pero(jozo.ime, jozo.prezime)}
 ---
 # Fast track
 ---
+# Intro 
+```kotlin
+package link.zeljko.kotlinwhy
+
+data class Celebrity(
+        var ime: String? = null,
+        var prezime: String? = null,
+        var nadimak: String? = null
+)
+
+fun main(args: Array<String>) {
+    val dwayne = Celebrity("Dwayne", "Johnson", "The Rock")
+    val madonna = Celebrity("Madonna")
+    val severina = Celebrity(ime = "Severina")
+
+    println("dwayne = ${dwayne}")
+    println("madonna = ${madonna}")
+    println("severina = ${severina}")
+    
+    val ivicPasalic = Celebrity(prezime = "Ivić Pašalić")
+    val prince = Celebrity(nadimak = "The artist formerly known as Prince")
+    
+    println(ivicPasalic)
+    println("prince = ${prince}")
+}
+```
+---
 # Parametri konstruktora
 ```kotlin
 class Test(x: String, y: String ) {
@@ -103,6 +130,40 @@ class Test(x: String, y: String ) {
         println("konstruktor $x, $y")
     }
 }
+```
+---
+# Singleton -> Object
+```kotlin
+object CelebrityList {
+    
+    fun registrirajCelebrity(celebrity: Celebrity) {}
+}
+
+fun main(args: Array<String>) {
+    CelebrityList.registrirajCelebrity(dwayne)
+}
+```
+Java
+```java
+    CelebrityList.INSTANCE.registrirajCelebrity(celebrity);
+```
+---
+# Static -> Companion object
+```kotlin
+data class Celebrity(...) {
+
+    companion object {
+        val averageHeight = 180;
+    }
+}
+
+fun main(args: Array<String>) {
+    println(Celebrity.averageHeight)
+}
+```
+Java
+```java
+    final int averageHeight = Celebrity.Companion.getAverageHeight();
 ```
 ---
 # When kao funkcija
