@@ -31,12 +31,45 @@ for the JVM, Android and the browser
 * 2017 Kotlin 1.1, Java 9, Android Java 8
 ---
 # Osnove - klase, funkcije i varijable
-## Klasa
-## var i val, getteri i setteri
 ---
-# Konstruktori i data klase
-## Primarni konstruktor
+# Klasa
+
+```kotlin
+class Person(val ime: String, val prezime: String)
+```
+
+## Sekundarni konstruktori
+```kotlin
+class Person(val ime: String, val prezime: String?) {
+    
+    constructor(ime: String) : this(ime, null)
+
+    constructor(ime: String, log : Boolean) : this(ime, null) {
+        println("ime = ${ime}")
+    }
+}
+```
+---
+# var i val, getteri i setteri
+```kotlin
+class Person(val ime: String, var prezime: String?, log: Boolean = true) {
+    init {
+        if (log) println("Ime ${ime} ${prezime}")
+    }
+}
+
+fun main(args: Array<String>) {
+    val person = Person("Pero", "Perić")
+    person.ime
+    person.prezime
+    person.prezime = "Jozić"
+}
+```
+---
 ## Data klase
+```kotlin
+data class Person(val ime: String, val prezime: String)
+```
 * equal
 * hashCode
 * toString
@@ -44,9 +77,20 @@ for the JVM, Android and the browser
 ---
 # null
 ## Tip ili Tip?
+```kotlin
+```
 ## Sigurni pozivi.?
+```kotlin
+person.prezime?.toUpperCase()?.toLowerCase()
+```
 ## Elvis, kralj nulla ?:
+```kotlin
+person.prezime?.toUpperCase()?.toLowerCase() ?: "prazno"
+```
 ## Hoću exception!!
+```kotlin
+person.prezime!!.toUpperCase().toLowerCase()
+```
 ## Java!
 ---
 # Zabava s funkcijama
