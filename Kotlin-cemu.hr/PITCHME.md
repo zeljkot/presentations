@@ -10,9 +10,9 @@ for the JVM, Android and the browser
 * Sažet, siguran, svestran i uskladiv
 ---
 # Povijest
-## Jetbrains
-## Android
-## Gradle
+* Jetbrains
+* Android
+* Gradle
 ---
 * 2003 Groovy
 * 2004 *Java 5,* Scala
@@ -31,8 +31,8 @@ for the JVM, Android and the browser
 * 2017 Kotlin 1.1, Java 9, Android Java 8
 ---
 # Osnove - klase, funkcije i varijable
-## Klasa
-## var i val, getteri i setteri
+* Klasa
+* var i val, getteri i setteri
 ---
 # Konstruktori i data klase
 ## Primarni konstruktor
@@ -43,45 +43,45 @@ for the JVM, Android and the browser
 * copy
 ---
 # null
-## Tip ili Tip?
-## Sigurni pozivi.?
-## Elvis, kralj nulla ?:
-## Hoću exception!!
-## Java!
+* Tip ili Tip?
+* Sigurni pozivi.?
+* Elvis, kralj nulla ?:
+* Hoću exception!!
+* Java!
 ---
 # Zabava s funkcijama
-## Izrazi (expression)
-## Default parametri
-## Extension funkcije
-## Operatori
-## Inline
-## Infix
+* Izrazi (expression)
+* Default parametri
+* Extension funkcije
+* Operatori
+* Inline
+* Infix
 ---
 # `if`, `when` i `try` su fukcije!
-## Stilske vježbe u Javi
+* Stilske vježbe u Javi
 ---
 # Klase, objekti i prijatelji
-## Klasa vulgaris
-## Objekt
-## Companion i @JvmStatic
-## Java interop
+* Klasa vulgaris
+* Objekt
+* Companion i @JvmStatic
+* Java interop
 ---
 # Zbirke
-## Jednostavno kreiranje
-## Operatori
-## Mutable i imutable
+* Jednostavno kreiranje
+* Operatori
+* Mutable i imutable
 ---
 # Ostalo
-## Delegated properties (lazy i sl.)
-## Nema "checked" iznimaka (iksepšna)
-## Nasljeđivanje
+* Delegated properties (lazy i sl.)
+* Nema "checked" iznimaka (iksepšna)
+* Nasljeđivanje
 * kostruktori
 * open
-## Visibility ~~package~~ -> internal
-## Import aliasi
-## Destructuring
-## Interpolacija stringova
-## Višelinijski stringovi
+* Visibility ~~package~~ -> internal
+* Import aliasi
+* Destructuring
+* Interpolacija stringova
+* Višelinijski stringovi
 ---
 # Let run with, also apply
 ## Funkcijska prebacivanja
