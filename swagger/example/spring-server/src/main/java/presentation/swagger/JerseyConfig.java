@@ -13,7 +13,6 @@ public class JerseyConfig extends ResourceConfig {
 
     JerseyConfig() {
         register(PersonsApiController.class);
-        System.out.println("### registering PersonsApiController");
     }
 
     @PostConstruct
@@ -22,7 +21,6 @@ public class JerseyConfig extends ResourceConfig {
     }
 
     private void configureSwagger() {
-        // Available at localhost:port/swagger.json
         this.register(ApiListingResource.class);
         this.register(SwaggerSerializers.class);
 

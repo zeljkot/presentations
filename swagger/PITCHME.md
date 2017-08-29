@@ -1,7 +1,9 @@
 Aligning REST Client and Server
 ==============
+
 ###### Use Common Interface Definition to Avoid API Drift
-###### Ivan Kaurin & Željko Trogrlić
+
+###### Željko Trogrlić
 ---
 # What is REST about
 ## Quick reminder
@@ -14,9 +16,12 @@ Aligning REST Client and Server
 * Content of the message is not defined (typically some JSON)
 ---
 ## How to write a client?
-* Check the documentation and be careful
+
+Check the documentation and be careful
+ 
 ## How to write a documentation?
-* Check the server code and be careful
+
+Check the server code and be careful
 ---
 # What Can We Learn From the Past
 Each and every protocol has interface definition language:
@@ -66,10 +71,21 @@ parameters:
 * Paths
   * Methods
 ---
-# Bottom-Up: Start with server code
-* Annotate server code
-* Generate Swagger definition
-* Create documentation
-* Keep specification in VCS!
-# Use case 3: End-to-end client and server Typesafe API
+# Create server
+* 31 supported platforms
+* Generated code includes build files
+---
+# Create client
+* 44 supported platforms
 * Use Swagger to generate Typescript Typesafe API
+---
+# Bottom-Up: Start with server code
+* Specification from annotated server code
+* Dynamic generation
+* For existing projects or API evolution
+* Primarily for Java, 3rd party Node.JS
+---
+# Tricky parts
+* Keep specification in VCS!
+* Spring Boot 2, JAX-RS and Swagger Jackson issue
+* Deep changes

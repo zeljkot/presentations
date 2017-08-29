@@ -1,6 +1,5 @@
 package presentation.swagger;
 
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Entity;
@@ -12,17 +11,14 @@ import javax.validation.constraints.NotNull;
  * User of the app
  */
 @Entity
-@ApiModel(description = "User of the app")
 public class Person {
 
     @Id
     @GeneratedValue
     private Integer id;
 
-    @ApiModelProperty(example = "Pero Vragec")
     private String name = null;
 
-    @ApiModelProperty(example = "46")
     private Integer age = null;
 
     public Integer getId() {
