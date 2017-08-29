@@ -1,0 +1,1 @@
+[Open presentation](https://gitpitch.com/zeljkot/presentations/master?p=swagger)

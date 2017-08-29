@@ -1,0 +1,116 @@
+swagger: '2.0'
+
+info:
+  title: User manager
+  version: "0.0.1"
+
+# Describe your paths here
+paths:
+  /persons:
+    get:
+      description: |
+        Gets `Person` objects.
+        Optional query param of **size** determines
+        size of returned array
+      parameters:
+        -
+          name: size
+          in: query
+          description: Size of array
+          default: 20
+          type: number
+          format: int
+      responses:
+        200:
+          description: Successful response
+          schema:
+            title: ArrayOfPersons
+            type: array
+            items:
+              $ref: '#/definitions/person'
+
+    post:
+      summary: Adds new user
+      consumes:
+        - application/json
+      parameters:
+        - name: person
+          in: body
+          schema:
+            $ref: '#/definitions/person'
+      responses:
+        200:
+          description: User saved. Returns user ID.
+          schema:
+            type: integer
+        400:
+          description: User error.
+
+  /persons/{id}:
+    get:
+      summary: Retrieves person by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/person'
+        404:
+          description: Not found
+
+    put:
+      summary: Updates user
+      consumes:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: person
+          in: body
+          schema:
+            $ref: '#/definitions/person'
+      responses:
+        200:
+          description: OK
+          schema:
+            type: integer
+
+    delete:
+      summary: Deletes the person
+      description: 
+        Person is *permanently* deleted
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+        403:
+          description: Person not found
+
+definitions:
+  person:
+    description: User of the app
+    type: object
+    required:
+      - name
+    properties:
+      id:
+        description: Surogate ID
+        type: integer
+        example: 42
+      name:
+        description: First and last name
+        type: string
+        example: Edmund Blackadder
+      age:
+        type: integer
+        example: 46

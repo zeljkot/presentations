@@ -1,0 +1,39 @@
+swagger: '2.0'
+
+info:
+  title: Person manager
+  version: "0.0.1"
+
+# Describe your paths here
+paths:
+  /persons:
+    get:
+      description: |
+        Gets `Person` objects.
+        Optional query param of **size** determines
+        size of returned array
+      parameters:
+        -
+          name: size
+          in: query
+          description: Size of array
+          required: true
+          type: number
+          format: double
+      responses:
+        200:
+          description: Successful response
+          schema:
+            title: ArrayOfPersons
+            type: array
+            items:
+              description: User of the app
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  description: First and last name
+                  type: string
+                age:
+                  type: integer
