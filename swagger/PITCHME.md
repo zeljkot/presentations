@@ -37,10 +37,12 @@ for the OpenAPI Specification(OAS),
 enabling development across the entire API lifecycle,
 from design and documentation, to test and deployment.
 ---
-# Top-Down Approach: Start with a Swagger
-* Write Swagger definition
+# Top-Down Approach: Start with a specification
+* Write specification
 * Create server (and documentation!)
 * Create client
+---
+# Create Specification
 ---
 # Common definitions
 Extract data model to definitions section...
