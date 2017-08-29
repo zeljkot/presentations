@@ -60,7 +60,7 @@ public class PersonsApiController {
     @ApiOperation(value = "Retrieves person by ID")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
-            @ApiResponse(code = 400, message = "User error")
+            @ApiResponse(code = 404, message = "Not found")
     })
     public Person get(
             @PathParam("id")
@@ -102,7 +102,7 @@ public class PersonsApiController {
     @Consumes(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Adds new user", notes = "Returns user ID.")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "User saver. Returns user ID", response = Integer.class),
+            @ApiResponse(code = 200, message = "User saved. Returns user ID", response = Integer.class),
             @ApiResponse(code = 400, message = "User error")
     })
     public Integer personsPost(

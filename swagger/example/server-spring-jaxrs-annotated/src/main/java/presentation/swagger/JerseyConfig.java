@@ -28,9 +28,9 @@ public class JerseyConfig extends ResourceConfig {
 
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("0.0.1");
-        beanConfig.setBasePath("/persons");
         beanConfig.setResourcePackage("presentation.swagger");
-        beanConfig.setPrettyPrint("true");
+        beanConfig.setHost("localhost:8080");
+        beanConfig.setPrettyPrint(true);
         beanConfig.setScan(true);
     }
 }

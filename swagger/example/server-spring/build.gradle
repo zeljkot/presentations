@@ -1,0 +1,97 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.0.M3'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+ext.springfoxVersion = '2.6.1'
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+
+dependencies {
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-joda', version: '2.8.8'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: springfoxVersion
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: springfoxVersion
+    compile group: 'joda-time', name: 'joda-time', version: '2.9.9'
+    runtime('org.hsqldb:hsqldb')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+
+
+
+/*
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        //maven { url "https://repo.spring.io/snapshot" }
+        //maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+
+group = 'io.swagger'
+version = '1.0.0'
+
+description = """server-spring"""
+
+ext.springBootVersion = '1.5.6.RELEASE'
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-joda', version: '2.8.8'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: $springBootVersion
+    compile group: 'joda-time', name: 'joda-time', version: '2.9.9'
+
+    compileOnly group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: springBootVersion
+    compileOnly group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+
+    runtime 'org.hsqldb:hsqldb'
+}
+*/
