@@ -16,10 +16,10 @@ Aligning REST Client and Server
 ---
 # Communicate API with Documentation?
 
-- ## How to Write a Documentation?      |
-- Check the server code and be careful  |
-- ## How to write a client?
-- Check the documentation and be careful|
+- _How to write a documentation?_      |
+- Check the server code and be careful |
+- _How to write a client?_             |
+- Check the documentation and be careful
 
 Note:
 Test note
@@ -50,7 +50,7 @@ from design and documentation, to test and deployment.
 ---
 # Add Methods
 
----?code=presentations/swagger/example/commonModel.yaml
+---?code=example/commonModel.yaml
 @[10]
 @[32]
 
@@ -58,8 +58,8 @@ from design and documentation, to test and deployment.
 # Extract Common Definitions
 
 ---?code=example/commonModel.yaml
-@[45-64]Extract data model to definitions section...
-@[29-30]...and reuse it later
+@[45-64](Extract data model to definitions section...)
+@[29-30](...and reuse it later)
 
 ---
 # Add Paths
@@ -72,10 +72,10 @@ from design and documentation, to test and deployment.
 # Detailed Parameter Specification
 
 ---?code=example/complete.yaml
-@[20]Description
-@[21]Required
-@[22]Example
-@[23]Default
+@[20](Description)
+@[21](Required)
+@[22](Example)
+@[23](Default)
 
 ---
 # Describe API
@@ -103,9 +103,9 @@ from design and documentation, to test and deployment.
 # Service Annotations
 
 ---?code=example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
-@[13-14]API
-@[23-27]Method
-@[32]Parameters
+@[13-14](API)
+@[23-27](Method)
+@[32](Parameters)
 
 ---
 # Model Annotations
