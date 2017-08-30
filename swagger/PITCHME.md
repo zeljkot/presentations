@@ -2,7 +2,7 @@ Aligning REST Client and Server
 ==============
 
 ###### Use Common Interface Definition to Avoid API Drift
-
+<BR><BR><BR>
 ###### Željko Trogrlić
 ---
 # What is REST about
@@ -15,11 +15,11 @@ Aligning REST Client and Server
   * DELETE
 * Content of the message is not defined (typically some JSON)
 ---
-## How to write a client?
+## How to write a client?|
 
-Check the documentation and be careful
+Check the documentation and be careful|
  
-## How to write a documentation?
+## How to write a documentation?|
 
 Check the server code and be careful
 ---
