@@ -51,7 +51,7 @@ from design and documentation, to test and deployment.
 ---
 # Add Methods
 
----?code=swagger/example/commonModel.yaml
+---?code=swagger/example/commonModel.yaml&lang=JSON
 
 @[10](GET)
 @[32](POST)
@@ -59,7 +59,7 @@ from design and documentation, to test and deployment.
 ---
 # Extract Common Definitions
 
----?code=swagger/example/commonModel.yaml
+---?code=swagger/example/commonModel.yaml&lang=JSON
 
 @[45-64](Extract data model to definitions section...)
 @[29-30](...and reuse it later)
@@ -67,7 +67,7 @@ from design and documentation, to test and deployment.
 ---
 # Add Paths
 
----?code=swagger/example/complete.yaml
+---?code=swagger/example/complete.yaml&lang=JSON
 
 @[10](Plain)
 @[50](With ID)
@@ -75,7 +75,7 @@ from design and documentation, to test and deployment.
 ---
 # Detailed Parameter Specification
 
----?code=swagger/example/complete.yaml
+---?code=swagger/example/complete.yaml&lang=JSON
 
 @[20](Description)
 @[21](Required)
@@ -85,7 +85,7 @@ from design and documentation, to test and deployment.
 ---
 # Describe API
 
----?code=swagger/example/complete.yaml
+---?code=swagger/example/complete.yaml&lang=JSON
 
 @[3-6]
 
