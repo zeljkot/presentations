@@ -52,6 +52,7 @@ from design and documentation, to test and deployment.
 # Add Methods
 
 ---?code=swagger/example/commonModel.yaml
+
 @[10](GET)
 @[32](POST)
 
@@ -59,6 +60,7 @@ from design and documentation, to test and deployment.
 # Extract Common Definitions
 
 ---?code=swagger/example/commonModel.yaml
+
 @[45-64](Extract data model to definitions section...)
 @[29-30](...and reuse it later)
 
@@ -66,6 +68,7 @@ from design and documentation, to test and deployment.
 # Add Paths
 
 ---?code=swagger/example/complete.yaml
+
 @[10](Plain)
 @[50](With ID)
 
@@ -73,6 +76,7 @@ from design and documentation, to test and deployment.
 # Detailed Parameter Specification
 
 ---?code=swagger/example/complete.yaml
+
 @[20](Description)
 @[21](Required)
 @[22](Example)
@@ -82,6 +86,7 @@ from design and documentation, to test and deployment.
 # Describe API
 
 ---?code=swagger/example/complete.yaml
+
 @[3-6]
 
 ---
@@ -104,6 +109,7 @@ from design and documentation, to test and deployment.
 # Service Annotations
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
+
 @[13-14](API)
 @[23-27](Method)
 @[32](Parameters)
@@ -112,6 +118,7 @@ from design and documentation, to test and deployment.
 # Model Annotations
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
+
 @[15](Class)
 @[41](Property)
 
