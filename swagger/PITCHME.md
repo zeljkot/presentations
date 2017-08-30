@@ -41,7 +41,7 @@ enabling development across the entire API lifecycle,
 from design and documentation, to test and deployment.
 ---
 # Top-Down Approach:
-# Start with a Specification
+## Start with a Specification
 
 * Write specification
 * Create server (and documentation!)
@@ -49,46 +49,86 @@ from design and documentation, to test and deployment.
 ---
 # Create Specification
 ---
-# Add Methods
+# Describe API
 
----?code=swagger/example/commonModel.yaml
+```yaml
+swagger: '2.0'
 
-@[10](GET)
-@[32](POST)
-
----
-# Extract Common Definitions
-
----?code=swagger/example/commonModel.yaml
-
-@[45-64](Extract data model to definitions section...)
-@[29-30](...and reuse it later)
-
----
-# Add Paths
-
----?code=swagger/example/complete.yaml
-
-@[10](Plain)
-@[50](With ID)
-
+info:
+  title: User manager
+  description: Users, we manage
+  version: "0.0.1"
+```
 ---
 # Detailed Parameter Specification
 
----?code=swagger/example/complete.yaml
+```yaml
+parameters:
+  -
+    name: size
+    in: query
+    description: Size of array
+    required: true
+    default: 20
+    type: number
+    format: double
+```
+---
+# Methods
 
-@[20](Description)
-@[21](Required)
-@[22](Example)
-@[23](Default)
+```yaml
+paths:
+  /persons:
+    get:
+      description: |
+        Gets `Person` objects.
+
+    post:
+      summary: Updates user
+```
+---
+# Add Paths
+
+```
+paths:
+  /persons:
+    get:
+      description: |
+        Gets `Person` objects.
+
+    post:
+      summary: Updates user
+    
+  /persons/{id}:
+    get:
+      summary: Retrieves person by ID
+```
+@[2](Plain)
+@[10](With ID)
 
 ---
-# Describe API
+# Common Definitions
 
----?code=swagger/example/complete.yaml
-
-@[3-6]
-
+Extract data model to definitions section...
+```yaml
+definitions:
+  person:
+    description: User of the app
+    type: object
+    required:
+      - name
+    properties:
+      id:
+        description: Surogate ID
+```
+...and reuse it later
+```yaml
+parameters:
+  - name: person
+    in: body
+    schema:
+      $ref: '#/definitions/person'
+```
 ---
 # Create Server
 * 31 supported platforms
@@ -99,7 +139,7 @@ from design and documentation, to test and deployment.
 * Use Swagger to generate Typescript Typesafe API
 ---
 # Bottom-Up:
-# Start with server code
+## Start with server code
 
 * Specification from annotated server code
 * Dynamic generation
@@ -110,7 +150,7 @@ from design and documentation, to test and deployment.
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
-@[13-14](API)
+@[14](API)
 @[23-27](Method)
 @[32](Parameters)
 
