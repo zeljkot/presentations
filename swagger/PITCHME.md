@@ -61,7 +61,7 @@ from design and documentation, to test and deployment.
 
 ---?code=swagger/example/commonModel.yaml&lang=JSON
 
-@[45-64](Extract data model to definitions section...)
+@[45-56](Extract data model to definitions section...)
 @[29-30](...and reuse it later)
 
 ---
@@ -79,8 +79,7 @@ from design and documentation, to test and deployment.
 
 @[20](Description)
 @[21](Required)
-@[22](Example)
-@[23](Default)
+@[22](Default)
 
 ---
 # Describe API
