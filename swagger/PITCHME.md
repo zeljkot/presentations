@@ -14,12 +14,12 @@ Aligning REST Client and Server
   * DELETE
 * Content of the message is not defined (typically some JSON)
 ---
-# Start with the Documentation
+# Communicate API with Documentation?
 
-- ## How to write a client?
-- Check the documentation and be careful|
 - ## How to Write a Documentation?      |
 - Check the server code and be careful  |
+- ## How to write a client?
+- Check the documentation and be careful|
 
 Note:
 Test note
@@ -50,7 +50,7 @@ from design and documentation, to test and deployment.
 ---
 # Add Methods
 
----?code=example/commonModel.yaml
+---?code=presentations/swagger/example/commonModel.yaml
 @[10]
 @[32]
 
