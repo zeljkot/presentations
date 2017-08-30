@@ -51,44 +51,86 @@ from design and documentation, to test and deployment.
 ---
 # Add Methods
 
----?code=swagger/example/commonModel.yaml
+```yaml
+paths:
+  /persons:
+    get:
+      description: |
+        Gets `Person` objects.
 
-@[10](GET)
-@[32](POST)
-
+    post:
+      summary: Updates user
+```
 ---
 # Extract Common Definitions
 
----?code=swagger/example/commonModel.yaml
-
-@[45-64](Extract data model to definitions section...)
-@[29-30](...and reuse it later)
-
+Extract data model to definitions section...
+```yaml
+definitions:
+  person:
+    description: User of the app
+    type: object
+    required:
+      - name
+    properties:
+      id:
+        description: Surogate ID
+```
+# ...and reuse it later
+```yaml
+parameters:
+  - name: person
+    in: body
+    schema:
+      $ref: '#/definitions/person'
+```
+@[5]
 ---
 # Add Paths
 
----?code=swagger/example/complete.yaml
+```
+paths:
+  /persons:
+    get:
+      description: |
+        Gets `Person` objects.
 
-@[10](Plain)
-@[50](With ID)
+    post:
+      summary: Updates user
+    
+  /persons/{id}:
+    get:
+      summary: Retrieves person by ID
+```
+@[2](Plain)
+@[10](With ID)
 
 ---
 # Detailed Parameter Specification
 
----?code=swagger/example/complete.yaml
-
-@[20](Description)
-@[21](Required)
-@[22](Example)
-@[23](Default)
-
+```yaml
+parameters:
+  -
+    name: size
+    in: query
+    description: Size of array
+    required: true
+    example: 10
+    default: 20
+    type: number
+    format: double
+```
 ---
 # Describe API
 
----?code=swagger/example/complete.yaml
+```yaml
+swagger: '2.0'
 
-@[3-6]
-
+info:
+  title: User manager
+  description: Users, we manage
+  version: "0.0.1"
+```
 ---
 # Create Server
 * 31 supported platforms
