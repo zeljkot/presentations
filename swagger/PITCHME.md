@@ -41,7 +41,7 @@ enabling development across the entire API lifecycle,
 from design and documentation, to test and deployment.
 ---
 # Top-Down Approach:
-# Start with a Specification
+## Start with a Specification
 
 * Write specification
 * Create server (and documentation!)
@@ -49,7 +49,32 @@ from design and documentation, to test and deployment.
 ---
 # Create Specification
 ---
-# Add Methods
+# Describe API
+
+```yaml
+swagger: '2.0'
+
+info:
+  title: User manager
+  description: Users, we manage
+  version: "0.0.1"
+```
+---
+# Detailed Parameter Specification
+
+```yaml
+parameters:
+  -
+    name: size
+    in: query
+    description: Size of array
+    required: true
+    default: 20
+    type: number
+    format: double
+```
+---
+# Methods
 
 ```yaml
 paths:
@@ -61,30 +86,6 @@ paths:
     post:
       summary: Updates user
 ```
----
-# Extract Common Definitions
-
-Extract data model to definitions section...
-```yaml
-definitions:
-  person:
-    description: User of the app
-    type: object
-    required:
-      - name
-    properties:
-      id:
-        description: Surogate ID
-```
-# ...and reuse it later
-```yaml
-parameters:
-  - name: person
-    in: body
-    schema:
-      $ref: '#/definitions/person'
-```
-@[5]
 ---
 # Add Paths
 
@@ -106,30 +107,27 @@ paths:
 @[10](With ID)
 
 ---
-# Detailed Parameter Specification
+# Common Definitions
 
+Extract data model to definitions section...
+```yaml
+definitions:
+  person:
+    description: User of the app
+    type: object
+    required:
+      - name
+    properties:
+      id:
+        description: Surogate ID
+```
+...and reuse it later
 ```yaml
 parameters:
-  -
-    name: size
-    in: query
-    description: Size of array
-    required: true
-    example: 10
-    default: 20
-    type: number
-    format: double
-```
----
-# Describe API
-
-```yaml
-swagger: '2.0'
-
-info:
-  title: User manager
-  description: Users, we manage
-  version: "0.0.1"
+  - name: person
+    in: body
+    schema:
+      $ref: '#/definitions/person'
 ```
 ---
 # Create Server
@@ -141,7 +139,7 @@ info:
 * Use Swagger to generate Typescript Typesafe API
 ---
 # Bottom-Up:
-# Start with server code
+## Start with server code
 
 * Specification from annotated server code
 * Dynamic generation
@@ -152,7 +150,7 @@ info:
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
-@[13-14](API)
+@[14](API)
 @[23-27](Method)
 @[32](Parameters)
 
