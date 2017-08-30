@@ -5,8 +5,6 @@ Aligning REST Client and Server
 <BR><BR><BR>
 ###### Željko Trogrlić
 
----?code=swagger/example/commonModel.yaml
-
 ---
 # REST Quick Reminder
 * Resources located by URLs
@@ -53,28 +51,28 @@ from design and documentation, to test and deployment.
 ---
 # Add Methods
 
----?code=presentations/swagger/example/commonModel.yaml
+---?code=swagger/example/commonModel.yaml
 @[10]
 @[32]
 
 ---
 # Extract Common Definitions
 
----?code=example/commonModel.yaml
+---?code=swagger/example/commonModel.yaml
 @[45-64](Extract data model to definitions section...)
 @[29-30](...and reuse it later)
 
 ---
 # Add Paths
 
----?code=example/complete.yaml
+---?code=swagger/example/complete.yaml
 @[10]
 @[50]
 
 ---
 # Detailed Parameter Specification
 
----?code=example/complete.yaml
+---?code=swagger/example/complete.yaml
 @[20](Description)
 @[21](Required)
 @[22](Example)
@@ -105,7 +103,7 @@ from design and documentation, to test and deployment.
 ---
 # Service Annotations
 
----?code=example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
+---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 @[13-14](API)
 @[23-27](Method)
 @[32](Parameters)
@@ -113,7 +111,7 @@ from design and documentation, to test and deployment.
 ---
 # Model Annotations
 
----?code=example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
+---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
 @[15]
 @[41]
 
