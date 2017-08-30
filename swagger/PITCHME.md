@@ -15,20 +15,21 @@ Aligning REST Client and Server
   * DELETE
 * Content of the message is not defined (typically some JSON)
 ---
-## How to write a client?|
+# Start with the Documentation
+- ## How to write a client?
+- Check the documentation and be careful|
+- ## How to Write a Documentation?      |
+- Check the server code and be careful  |
 
-Check the documentation and be careful|
- 
-## How to write a documentation?|
-
-Check the server code and be careful
+Note:
+Test note
 ---
 # What Can We Learn From the Past
 Each and every protocol has interface definition language:
 * CORBA IDL
 * SOAP WSDL
 ---
-# What is it good for?
+# What Is It Good For?
 Generate both client and server from the single source of truth
 ---
 ![Alt text](http://github.com/OAI/OpenAPI-Style-Guide/raw/master/graphics/bitmap/OpenAPI_Logo_Pantone.png "Logo")
@@ -38,47 +39,44 @@ for the OpenAPI Specification(OAS),
 enabling development across the entire API lifecycle,
 from design and documentation, to test and deployment.
 ---
-# Top-Down Approach: Start with a specification
+# Top-Down Approach: Start with a Specification
 * Write specification
 * Create server (and documentation!)
 * Create client
 ---
 # Create Specification
 ---
-# Common definitions
-Extract data model to definitions section...
-```
-definitions:
-  person:
-    description: User of the app
-    type: object
-    required:
-      - name
-    properties:
-      name:
-        description: First and last name
-        type: string
-```
+# Add Methods
+---?code=example/commonModel.yaml
+@[10]
+@[32]
 ---
-# Common definitions
-...and reuse it later
-```
-parameters:
-  - name: person
-    in: body
-    schema:
-      $ref: '#/definitions/person'
-```
+# Extract Common Definitions
+---?code=example/commonModel.yaml
+@[45-64]Extract data model to definitions section...
+@[29-30]...and reuse it later
 ---
-# Add more stuff
-* Paths
-  * Methods
+# Add Paths
+---?code=example/complete.yaml
+@[10]
+@[50]
 ---
-# Create server
+# Detailed Parameter Specification
+---?code=example/complete.yaml
+@[20]Description
+@[21]Required
+@[22]Example
+@[23]Default
+---
+# Describe API
+---?code=example/complete.yaml
+@[3-6]
+---
+# Create Server
 * 31 supported platforms
 * Generated code includes build files
 ---
-# Create client
+# Create Client
 * 44 supported platforms
 * Use Swagger to generate Typescript Typesafe API
 ---
@@ -87,6 +85,17 @@ parameters:
 * Dynamic generation
 * For existing projects or API evolution
 * Primarily for Java, 3rd party Node.JS
+---
+# Service Annotations
+---?code=example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
+@[13-14]API
+@[23-27]Method
+@[32]Parameters
+---
+# Model Annotations
+---?code=example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
+@[15]
+@[41]
 ---
 # Tricky parts
 * Keep specification in VCS!
