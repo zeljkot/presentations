@@ -49,20 +49,28 @@ from design and documentation, to test and deployment.
 ---
 # Create Specification
 ---
+# Describe API
+
+---?code=swagger/example/complete.yaml&lang=JSON
+
+@[3-6]
+
+---
+# Define Parameters
+
+---?code=swagger/example/complete.yaml&lang=JSON
+
+@[20](Description)
+@[21](Required)
+@[22](Default)
+
+---
 # Add Methods
 
 ---?code=swagger/example/commonModel.yaml&lang=JSON
 
 @[10](GET)
 @[32](POST)
-
----
-# Extract Common Definitions
-
----?code=swagger/example/commonModel.yaml&lang=JSON
-
-@[45-56](Extract data model to definitions section...)
-@[29-30](...and reuse it later)
 
 ---
 # Add Paths
@@ -73,20 +81,12 @@ from design and documentation, to test and deployment.
 @[50](With ID)
 
 ---
-# Detailed Parameter Specification
+# Extract Common Definitions
 
----?code=swagger/example/complete.yaml&lang=JSON
+---?code=swagger/example/commonModel.yaml&lang=JSON
 
-@[20](Description)
-@[21](Required)
-@[22](Default)
-
----
-# Describe API
-
----?code=swagger/example/complete.yaml&lang=JSON
-
-@[3-6]
+@[45-56](Extract data model to definitions section...)
+@[29-30](...and reuse it later)
 
 ---
 # Create Server
@@ -95,7 +95,7 @@ from design and documentation, to test and deployment.
 ---
 # Create Client
 * 44 supported platforms
-* Use Swagger to generate Typescript Typesafe API
+* Use Swagger to generate end-to-end typesafe API (e.g. Typescript + Java)
 ---
 # Bottom-Up:
 # Start with server code
