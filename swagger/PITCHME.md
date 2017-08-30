@@ -5,8 +5,7 @@ Aligning REST Client and Server
 <BR><BR><BR>
 ###### Željko Trogrlić
 ---
-# What is REST about
-## Quick reminder
+# REST Quick Reminder
 * Resources located by URLs
 * Verbs operate on resources
   * GET
@@ -16,6 +15,7 @@ Aligning REST Client and Server
 * Content of the message is not defined (typically some JSON)
 ---
 # Start with the Documentation
+
 - ## How to write a client?
 - Check the documentation and be careful|
 - ## How to Write a Documentation?      |
@@ -33,13 +33,15 @@ Each and every protocol has interface definition language:
 Generate both client and server from the single source of truth
 ---
 ![Alt text](http://github.com/OAI/OpenAPI-Style-Guide/raw/master/graphics/bitmap/OpenAPI_Logo_Pantone.png "Logo")
-# Enter Swagger / OpenAPI Specification
+# Swagger / OpenAPI
 Swagger is the world’s largest framework of API developer tools 
 for the OpenAPI Specification(OAS),
 enabling development across the entire API lifecycle,
 from design and documentation, to test and deployment.
 ---
-# Top-Down Approach: Start with a Specification
+# Top-Down Approach:
+# Start with a Specification
+
 * Write specification
 * Create server (and documentation!)
 * Create client
@@ -47,30 +49,40 @@ from design and documentation, to test and deployment.
 # Create Specification
 ---
 # Add Methods
+
 ---?code=example/commonModel.yaml
 @[10]
 @[32]
+
 ---
 # Extract Common Definitions
+
 ---?code=example/commonModel.yaml
 @[45-64]Extract data model to definitions section...
 @[29-30]...and reuse it later
+
 ---
 # Add Paths
+
 ---?code=example/complete.yaml
 @[10]
 @[50]
+
 ---
 # Detailed Parameter Specification
+
 ---?code=example/complete.yaml
 @[20]Description
 @[21]Required
 @[22]Example
 @[23]Default
+
 ---
 # Describe API
+
 ---?code=example/complete.yaml
 @[3-6]
+
 ---
 # Create Server
 * 31 supported platforms
@@ -80,22 +92,28 @@ from design and documentation, to test and deployment.
 * 44 supported platforms
 * Use Swagger to generate Typescript Typesafe API
 ---
-# Bottom-Up: Start with server code
+# Bottom-Up:
+# Start with server code
+
 * Specification from annotated server code
 * Dynamic generation
 * For existing projects or API evolution
 * Primarily for Java, 3rd party Node.JS
 ---
 # Service Annotations
+
 ---?code=example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 @[13-14]API
 @[23-27]Method
 @[32]Parameters
+
 ---
 # Model Annotations
+
 ---?code=example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
 @[15]
 @[41]
+
 ---
 # Tricky parts
 * Keep specification in VCS!
