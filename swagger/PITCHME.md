@@ -16,10 +16,10 @@ Aligning REST Client and Server
 ---
 # Communicate API with Documentation?
 
-- _How to write a documentation?_      |
+- *How to write a documentation?*      
 - Check the server code and be careful |
-- _How to write a client?_             |
-- Check the documentation and be careful
+- *How to write a client?*             |
+- Check the documentation and be careful|
 
 Note:
 Test note
@@ -50,7 +50,7 @@ from design and documentation, to test and deployment.
 ---
 # Add Methods
 
----?code=example/commonModel.yaml
+---?code=presentations/swagger/example/commonModel.yaml
 @[10]
 @[32]
 
