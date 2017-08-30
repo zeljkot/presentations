@@ -41,7 +41,7 @@ enabling development across the entire API lifecycle,
 from design and documentation, to test and deployment.
 ---
 # Top-Down Approach:
-# Start with a Specification
+## Start with a Specification
 
 * Write specification
 * Create server (and documentation!)
@@ -78,7 +78,7 @@ from design and documentation, to test and deployment.
 * Use Swagger to generate end-to-end typesafe API (e.g. Typescript + Java)
 ---
 # Bottom-Up:
-# Start with server code
+## Start with server code
 
 * Specification from annotated server code
 * Dynamic generation
@@ -89,7 +89,7 @@ from design and documentation, to test and deployment.
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
-@[13-14](API)
+@[14](API)
 @[23-27](Method)
 @[32](Parameters)
 

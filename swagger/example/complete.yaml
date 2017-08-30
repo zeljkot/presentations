@@ -19,7 +19,6 @@ paths:
           in: query
           description: Size of array
           required: true
-          example: 10
           default: 20
           type: number
           format: double
