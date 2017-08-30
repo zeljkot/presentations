@@ -48,87 +48,26 @@ from design and documentation, to test and deployment.
 * Create client
 ---
 # Create Specification
----
-# Describe API
 
-```yaml
-swagger: '2.0'
+---?code=swagger/example/complete.yaml&lang=JSON
 
-info:
-  title: User manager
-  description: Users, we manage
-  version: "0.0.1"
-```
----
-# Detailed Parameter Specification
+@[3-6](Describe API)
 
-```yaml
-parameters:
-  -
-    name: size
-    in: query
-    description: Size of array
-    required: true
-    default: 20
-    type: number
-    format: double
-```
----
-# Methods
+@[10](Add paths)
+@[50](...with ID)
 
-```yaml
-paths:
-  /persons:
-    get:
-      description: |
-        Gets `Person` objects.
+@[11](Add methods: GET...)
+@[34-35](...POST)
 
-    post:
-      summary: Updates user
-```
----
-# Add Paths
+@[16-24](Define parameters)
+@[20](Description)
+@[21](Required)
+@[22](Default)
 
-```
-paths:
-  /persons:
-    get:
-      description: |
-        Gets `Person` objects.
+@[97-107](Extract data model to definitions section...)
+@[31-32](...and reuse it later)
+@[38-42]
 
-    post:
-      summary: Updates user
-    
-  /persons/{id}:
-    get:
-      summary: Retrieves person by ID
-```
-@[2](Plain)
-@[10](With ID)
-
----
-# Common Definitions
-
-Extract data model to definitions section...
-```yaml
-definitions:
-  person:
-    description: User of the app
-    type: object
-    required:
-      - name
-    properties:
-      id:
-        description: Surogate ID
-```
-...and reuse it later
-```yaml
-parameters:
-  - name: person
-    in: body
-    schema:
-      $ref: '#/definitions/person'
-```
 ---
 # Create Server
 * 31 supported platforms
@@ -136,7 +75,7 @@ parameters:
 ---
 # Create Client
 * 44 supported platforms
-* Use Swagger to generate Typescript Typesafe API
+* Use Swagger to generate end-to-end typesafe API (e.g. Typescript + Java)
 ---
 # Bottom-Up:
 ## Start with server code
