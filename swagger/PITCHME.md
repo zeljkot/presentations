@@ -48,45 +48,27 @@ from design and documentation, to test and deployment.
 * Create client
 ---
 # Create Specification
----
-# Describe API
 
 ---?code=swagger/example/complete.yaml&lang=JSON
 
-@[3-6]
+@[3-6](Describe API)
 
----
-# Define Parameters
+@[11](Add methods: GET...)
+@[34](...POST)
 
----?code=swagger/example/complete.yaml&lang=JSON
-
+@[16-24](Define parameters)
 @[20](Description)
 @[21](Required)
 @[22](Default)
 
----
-# Add Methods
+@[10](Add paths)
+@[50](...with ID)
 
 ---?code=swagger/example/commonModel.yaml&lang=JSON
 
-@[10](GET)
-@[32](POST)
-
----
-# Add Paths
-
----?code=swagger/example/complete.yaml&lang=JSON
-
-@[10](Plain)
-@[50](With ID)
-
----
-# Extract Common Definitions
-
----?code=swagger/example/commonModel.yaml&lang=JSON
-
-@[45-56](Extract data model to definitions section...)
-@[29-30](...and reuse it later)
+@[97-107](Extract data model to definitions section...)
+@[31-32](...and reuse it later)
+@[38-42]
 
 ---
 # Create Server
