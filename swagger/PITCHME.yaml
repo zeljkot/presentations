@@ -1,1 +1,5 @@
 theme-override : assets/css/PITCHME.css
+
+vertical-center : false
+
+transition: convex
