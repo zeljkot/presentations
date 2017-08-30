@@ -53,18 +53,16 @@ from design and documentation, to test and deployment.
 
 @[3-6](Describe API)
 
+@[10](Add paths)
+@[50](...with ID)
+
 @[11](Add methods: GET...)
-@[34](...POST)
+@[34-35](...POST)
 
 @[16-24](Define parameters)
 @[20](Description)
 @[21](Required)
 @[22](Default)
-
-@[10](Add paths)
-@[50](...with ID)
-
----?code=swagger/example/commonModel.yaml&lang=JSON
 
 @[97-107](Extract data model to definitions section...)
 @[31-32](...and reuse it later)
