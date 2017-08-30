@@ -31,7 +31,7 @@ Each and every protocol has interface definition language:
 # What is it good for?
 Generate both client and server from the single source of truth
 ---
-![Alt OpenAPI-logo](https://github.com/OAI/OpenAPI-Style-Guide/blob/master/graphics/vector/OpenAPI_Logo_Pantone.svg)
+[[https://github.com/OAI/OpenAPI-Style-Guide/blob/master/graphics/vector/OpenAPI_Logo_Pantone.svg|alt=OpenAPILogo]]
 # Enter Swagger / OpenAPI Specification
 Swagger is the world’s largest framework of API developer tools 
 for the OpenAPI Specification(OAS),
