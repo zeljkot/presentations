@@ -4,6 +4,9 @@ Aligning REST Client and Server
 ###### Use Common Interface Definition to Avoid API Drift
 <BR><BR><BR>
 ###### Željko Trogrlić
+
+---?code=swagger/example/commonModel.yaml
+
 ---
 # REST Quick Reminder
 * Resources located by URLs
