@@ -26,10 +26,11 @@ There was no standard how to specify those messages.
 ---
 # Communicate API with Documentation?
 
-- **How to write a documentation?**
-- Check the server code and be careful |
-- **How to write a client?**             |
-- Check the documentation and be careful|
+**How to write a documentation?**
+_Check the server code and be careful_
+
+**How to write a client?**       
+_Check the documentation and be careful_
 
 Note:
 Expand API in
@@ -60,7 +61,7 @@ Note:
   * Microsoft
 ---
 # Top-Down Approach:
-## Start with a Specification
+## Start with the Specification
 
 * Write specification
 * Create server (and documentation!)
@@ -94,7 +95,7 @@ Note:
 * Use Swagger to generate end-to-end typesafe API (e.g. Typescript + Java)
 ---
 # Bottom-Up:
-## Start with server code
+## Start with the Server Code
 
 * Specification from annotated server code
 * Dynamic generation
