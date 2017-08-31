@@ -27,9 +27,11 @@ There was no standard how to specify those messages.
 # Communicate API with Documentation?
 
 **How to write a documentation?**
+
 _Check the server code and be careful_
 
 **How to write a client?**       
+
 _Check the documentation and be careful_
 
 Note:
@@ -41,9 +43,8 @@ Expand API in
 Each and every protocol has interface definition language:
 * CORBA IDL
 * SOAP WSDL
----
-# What Is It Good For?
-Generate both client and server from the single source of truth
+
+**Generate both client and server from the single source of truth!**
 ---
 ![Alt text](http://github.com/OAI/OpenAPI-Style-Guide/raw/master/graphics/bitmap/OpenAPI_Logo_Pantone.png "Logo")
 # Swagger / OpenAPI

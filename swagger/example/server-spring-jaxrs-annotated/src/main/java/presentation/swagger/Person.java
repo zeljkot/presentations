@@ -15,14 +15,15 @@ import javax.validation.constraints.NotNull;
 @ApiModel(description = "User of the app")
 public class Person {
 
+    @ApiModelProperty(value = "Surogate ID", example = "42")
     @Id
     @GeneratedValue
     private Integer id;
 
-    @ApiModelProperty(example = "Pero Vragec")
+    @ApiModelProperty(value = "First and last name", example = "Pero Vragec")
     private String name = null;
 
-    @ApiModelProperty(example = "46")
+    @ApiModelProperty(value = "Age in earth years", example = "46")
     private Integer age = null;
 
     public Integer getId() {
@@ -38,7 +39,6 @@ public class Person {
      *
      * @return name
      **/
-    @ApiModelProperty(required = true, value = "First and last name")
     @NotNull
     public String getName() {
         return name;
@@ -53,7 +53,6 @@ public class Person {
      *
      * @return age
      **/
-    @ApiModelProperty(value = "")
     public Integer getAge() {
         return age;
     }

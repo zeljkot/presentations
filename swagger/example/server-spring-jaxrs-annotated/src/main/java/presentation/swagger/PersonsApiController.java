@@ -43,7 +43,7 @@ public class PersonsApiController {
     @ApiOperation(value = "Deletes the person", notes = "Person is *permanently* deleted")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "User deleted"),
-            @ApiResponse(code = 403, message = "Person not found")}
+            @ApiResponse(code = 404, message = "Person not found")}
     )
     public void delete(
             @PathParam("id")
