@@ -106,11 +106,8 @@ Note:
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
 @[12-14](Class)
-@[14](API)
 @[23-30](Method)
-@[23-27](Operation)
 @[31-33](Parameters)
-@[32](Parameters)
 
 ---
 # Model Annotations
@@ -118,9 +115,7 @@ Note:
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
 
 @[14-16](Class)
-@[15](Class)
 @[41-45](Property)
-@[41](Property)
 
 ---
 # Tricky parts
