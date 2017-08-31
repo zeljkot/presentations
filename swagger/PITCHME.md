@@ -105,7 +105,7 @@ Note:
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
-@[12-14](Class)
+@[12-15](Class)
 @[23-30](Method)
 @[31-33](Parameters)
 
@@ -123,7 +123,7 @@ Note:
 * TIP: Keep specification in VCS!
 * Spring Boot 2, JAX-RS and Swagger Jackson issue
 ---
-# Takeway
+# Takeaway
 * Whenever you have API, it will grow through space and time
 * Maintenanace will consume resources
   * Source
