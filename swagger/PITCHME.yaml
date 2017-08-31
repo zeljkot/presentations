@@ -1,3 +1,4 @@
 theme-override : assets/css/PITCHME.css
-
 transition: fade
+vertical-center : false
+logo : https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAZbAAAAJDIzZmNiOWNkLTBiOGMtNDBhNC04NTE5LTgwZTAxYzYwYTQ5OQ.png
