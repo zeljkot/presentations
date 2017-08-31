@@ -14,16 +14,24 @@ Aligning REST Client and Server
   * POST
   * DELETE
 * Content of the message is not defined (typically some JSON)
+
+Note:
+REST is today most common standard for communication between server and client.
+While REST is actually arcitectural style (web resources, stateless protocol, standard operations),
+we usually think about JSON messages over HTTP.
+There was no standard how to specify those messages.
 ---
 # Communicate API with Documentation?
 
-- *How to write a documentation?*      
+- **How to write a documentation?**
 - Check the server code and be careful |
-- *How to write a client?*             |
+- **How to write a client?**             |
 - Check the documentation and be careful|
 
 Note:
-Test note
+Expand API in
+* space (number of requests)
+* time (API evolution)
 ---
 # What Can We Learn From the Past
 Each and every protocol has interface definition language:
@@ -39,6 +47,14 @@ Swagger is the world’s largest framework of API developer tools
 for the OpenAPI Specification(OAS),
 enabling development across the entire API lifecycle,
 from design and documentation, to test and deployment.
+
+Note:
+* 2010 Wordnik
+* 2015 March Smartbeat
+* 2015 November Linux Foundation Open API Initiative
+  * Google
+  * IBM
+  * Microsoft
 ---
 # Top-Down Approach:
 ## Start with a Specification
@@ -53,19 +69,16 @@ from design and documentation, to test and deployment.
 
 @[3-6](Describe API)
 
-@[10](Add paths)
-@[50](...with ID)
+@[9-10](Add paths)
+@[49](...with ID)
 
-@[11](Add methods: GET...)
-@[34-35](...POST)
+@[9-11](Add methods: GET...)
+@[34](...POST)
 
 @[16-24](Define parameters)
-@[20](Description)
-@[21](Required)
-@[22](Default)
 
 @[97-107](Extract data model to definitions section...)
-@[31-32](...and reuse it later)
+@[25-32](...and reuse it later)
 @[38-42]
 
 ---
@@ -89,8 +102,11 @@ from design and documentation, to test and deployment.
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
+@[12-14](Class)
 @[14](API)
-@[23-27](Method)
+@[23-30](Method)
+@[23-27](Operation)
+@[31-33](Parameters)
 @[32](Parameters)
 
 ---
@@ -98,11 +114,21 @@ from design and documentation, to test and deployment.
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
 
+@[14-16](Class)
 @[15](Class)
+@[41-45](Property)
 @[41](Property)
 
 ---
 # Tricky parts
-* Keep specification in VCS!
-* Spring Boot 2, JAX-RS and Swagger Jackson issue
 * Deep changes
+* TIP: Keep specification in VCS!
+* Spring Boot 2, JAX-RS and Swagger Jackson issue
+---
+# Takeway
+* Whenever you have API, it will grow through space and time
+* Maintenanace will consume resources
+  * Source
+  * Documentation
+* OpenAPI is easy to use standard with rich tooling
+* OpenAPI can be easily introduced to existing projects
