@@ -1,4 +1,3 @@
-logo : https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAZbAAAAJDIzZmNiOWNkLTBiOGMtNDBhNC04NTE5LTgwZTAxYzYwYTQ5OQ.png
 Aligning REST Client and Server
 ==============
 
