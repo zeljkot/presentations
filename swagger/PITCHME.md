@@ -114,7 +114,7 @@ On different levels:
 
 +++
 
----?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
++++?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
 @[12-15](Class)
 @[23-30](Method)
@@ -128,7 +128,7 @@ On different levels:
 
 +++
 
----?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
++++?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
 
 @[14-16](Class)
 @[41-45](Property)
