@@ -112,8 +112,6 @@ On different levels:
 * method
 * parameter
 
-+++
-
 +++?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
 @[12-15](Class)
@@ -125,8 +123,6 @@ On different levels:
 
 * class
 * property
-
-+++
 
 +++?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
 
