@@ -10,13 +10,9 @@ OG Consultancy Services
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 ---
 # REST Quick Reminder
-* Resources located by URLs
-* Verbs operate on resources
-  * GET
-  * PUT
-  * POST
-  * DELETE
-* Content of the message is not defined (typically some JSON)
+* Rest is architectural style...
+* ... but for many, just JSON over HTTP
+* Content of the message is not defined
 
 Note:
 REST is today most common standard for communication between server and client.
@@ -70,6 +66,14 @@ Note:
 ---
 # Create Specification
 
+* API description
+* paths
+* methods
+* parameters
+* data model
+
++++
+
 ---?code=swagger/example/complete.yaml&lang=JSON
 
 @[3-6](Describe API)
@@ -105,6 +109,13 @@ Note:
 ---
 # Service Annotations
 
+On different levels:
+* class
+* method
+* parameter
+
++++
+
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
 @[12-15](Class)
@@ -113,6 +124,11 @@ Note:
 
 ---
 # Model Annotations
+
+* class
+* property
+
++++
 
 ---?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
 
@@ -132,3 +148,5 @@ Note:
   * Documentation
 * OpenAPI is easy to use standard with rich tooling
 * OpenAPI can be easily introduced to existing projects
+
+https://github.com/zeljkot/presentations/tree/master/swagger
