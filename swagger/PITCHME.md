@@ -72,9 +72,7 @@ Note:
 * parameters
 * data model
 
-+++
-
----?code=swagger/example/complete.yaml&lang=JSON
++++?code=swagger/example/complete.yaml&lang=JSON
 
 @[3-6](Describe API)
 
@@ -114,9 +112,7 @@ On different levels:
 * method
 * parameter
 
-+++
-
----?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
++++?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/PersonsApiController.java
 
 @[12-15](Class)
 @[23-30](Method)
@@ -128,9 +124,7 @@ On different levels:
 * class
 * property
 
-+++
-
----?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
++++?code=swagger/example/server-spring-jaxrs-annotated/src/main/java/presentation/swagger/Person.java
 
 @[14-16](Class)
 @[41-45](Property)
