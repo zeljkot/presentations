@@ -72,9 +72,7 @@ Note:
 * parameters
 * data model
 
-+++
-
----?code=swagger/example/complete.yaml&lang=JSON
++++?code=swagger/example/complete.yaml&lang=JSON
 
 @[3-6](Describe API)
 
