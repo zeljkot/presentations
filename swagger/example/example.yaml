@@ -93,7 +93,7 @@ paths:
       responses:
         200:
           description: OK
-        403:
+        404:
           description: Person not found
 
 definitions:

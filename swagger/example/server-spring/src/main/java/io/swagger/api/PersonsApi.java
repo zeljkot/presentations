@@ -5,18 +5,13 @@
  */
 package io.swagger.api;
 
-import java.math.BigDecimal;
-import io.swagger.model.Person;
-
 import io.swagger.annotations.*;
+import io.swagger.model.Person;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-08-29T20:02:44.702Z")
 
 @Api(value = "persons", description = "the persons API")
@@ -34,7 +29,7 @@ public interface PersonsApi {
     @ApiOperation(value = "Deletes the person", notes = "Person is *permanently* deleted", response = Void.class, tags={  })
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "OK", response = Void.class),
-        @ApiResponse(code = 403, message = "Person not found", response = Void.class) })
+            @ApiResponse(code = 404, message = "Person not found", response = Void.class)})
 
     @RequestMapping(value = "/persons/{id}",
         method = RequestMethod.DELETE)

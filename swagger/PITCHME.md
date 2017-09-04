@@ -1,9 +1,9 @@
-Aligning REST Client and Server
-==============
+# Aligning REST
+# Client and Server
 
-###### Use Common Interface Definition to Avoid API Drift
+## Use Common Interface Definition to Avoid API Drift
 <BR>
-###### Željko Trogrlić
+**Željko Trogrlić**
 
 OG Consultancy Services
 <BR>
@@ -19,6 +19,7 @@ REST is today most common standard for communication between server and client.
 While REST is actually arcitectural style (web resources, stateless protocol, standard operations),
 we usually think about JSON messages over HTTP.
 There was no standard how to specify those messages.
+How Ivan and I started.
 ---
 # Communicate API with Documentation?
 
@@ -130,10 +131,16 @@ On different levels:
 @[41-45](Property)
 
 ---
-# Tricky parts
+# Keep changes under control
+Unintended changes:
+* Refactoring
 * Deep changes
-* TIP: Keep specification in VCS!
-* Spring Boot 2, JAX-RS and Swagger Jackson issue
+* Swagger induced changes (e.g. "tag")
+
+**TIP: Keep specification in VCS!**
+
+Note:
+Spring Boot 2, JAX-RS and Swagger Jackson issue
 ---
 # Takeaway
 * Whenever you have API, it will grow through space and time
@@ -144,3 +151,10 @@ On different levels:
 * OpenAPI can be easily introduced to existing projects
 
 https://github.com/zeljkot/presentations/tree/master/swagger
+
+Note:
+How it worked out for Ivan and me.
+---
+#Try Swagger in your existing project!
+
+Thank you!
