@@ -1,7 +1,7 @@
 # Aligning REST
 # Client and Server
 <BR>
-## Use Common Interface Definition to Avoid API Drift
+### Use Common Interface Definition to Avoid API Drift
 <BR>
 **Željko Trogrlić**
 
@@ -176,7 +176,8 @@ Spring Boot 2, JAX-RS and Swagger Jackson issue
 
 https://github.com/zeljkot/presentations/tree/master/swagger
 
-Note:
+???
+
 How it worked out for Ivan and me.
 Try Swagger in your existing project!
 
