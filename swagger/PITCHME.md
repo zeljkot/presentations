@@ -175,7 +175,7 @@ Spring Boot 2, JAX-RS and Swagger Jackson issue
 * OpenAPI is easy to use standard with rich tooling
 * OpenAPI can be easily introduced to existing projects
 
-https://github.com/zeljkot/presentations/tree/master/swagger
+https://**github**.com/**zeljkot**/presentations/tree/master/swagger
 
 Note:
 How it worked out for Ivan and me.
