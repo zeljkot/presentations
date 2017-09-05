@@ -4,7 +4,6 @@ info:
   title: Person manager
   version: "0.0.1"
 
-# Describe your paths here
 paths:
   /persons:
     get:

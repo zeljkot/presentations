@@ -87,17 +87,18 @@ Note:
 * parameters
 * data model
 
-+++?code=swagger/example/complete.yaml&lang=JSON
++++?code=swagger/example/complete.yaml&lang=YAML
 
-@[3-6](Describe API)
+@[3-5](Describe API)
+@[7-8](Add paths)
+@[9](Add methods)
+@[14-21](Define parameters)
+@[22-38](Response)
 
-@[9-10](Add paths)
-@[49](...with ID)
++++?code=swagger/example/complete.yaml&lang=YAML
 
-@[9-11](Add methods: GET...)
-@[34](...POST)
-
-@[16-24](Define parameters)
+@[49](Path with ID)
+@[63-69](PUT)
 
 @[97-107](Extract data model to definitions section...)
 @[25-32](...and reuse it later)
