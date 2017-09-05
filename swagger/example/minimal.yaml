@@ -16,7 +16,7 @@ paths:
           name: size
           in: query
           description: Size of array
-          required: true
+          required: false
           type: number
           format: double
       responses:
