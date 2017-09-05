@@ -87,10 +87,10 @@ Note:
 * parameters
 * data model
 
-+++?code=swagger/example/complete.yaml&lang=YAML
++++?code=swagger/example/minimal.yaml&lang=YAML
 
 @[3-5](Describe API)
-@[7-8](Add paths)
+@[8-10](Add paths)
 @[9](Add methods)
 @[14-21](Define parameters)
 @[22-38](Response)
