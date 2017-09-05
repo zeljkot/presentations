@@ -8,8 +8,11 @@
 OG Consultancy Services
 <BR>
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+
 ---
+
 # REST Quick Reminder
+
 * Rest is architectural style...
 * ... but for many, just JSON over HTTP
 * Content of the message is not defined
@@ -20,7 +23,9 @@ While REST is actually arcitectural style (web resources, stateless protocol, st
 we usually think about JSON messages over HTTP.
 There was no standard how to specify those messages.
 How Ivan and I started.
+
 ---
+
 # Communicate API with Documentation?
 
 **How to write a documentation?**
@@ -35,7 +40,9 @@ Note:
 Expand API in
 * space (number of requests)
 * time (API evolution)
+
 ---
+
 # What Can We Learn From the Past
 Each and every protocol has interface definition language:
 * CORBA IDL
@@ -44,6 +51,7 @@ Each and every protocol has interface definition language:
 **Generate both client and server from the single source of truth!**
 
 ---
+
 ![Alt text](http://github.com/OAI/OpenAPI-Style-Guide/raw/master/graphics/bitmap/OpenAPI_Logo_Pantone.png "Logo")
 # Swagger / OpenAPI
 Swagger is the world’s largest framework of API developer tools 
@@ -58,14 +66,18 @@ Note:
   * Google
   * IBM
   * Microsoft
+
 ---
+
 # Top-Down Approach:
 ## Start with the Specification
 
 * Write specification
 * Create server (and documentation!)
 * Create client
+
 ---
+
 # Create Specification
 
 * API description
@@ -91,14 +103,19 @@ Note:
 @[38-42]
 
 ---
+
 # Create Server
 * 31 supported platforms
 * Generated code includes build files
+
 ---
+
 # Create Client
 * 44 supported platforms
 * Use Swagger to generate end-to-end typesafe API (e.g. Typescript + Java)
+
 ---
+
 # Bottom-Up:
 ## Start with the Server Code
 
@@ -106,7 +123,9 @@ Note:
 * Dynamic generation
 * For existing projects or API evolution
 * Primarily for Java, 3rd party Node.JS
+
 ---
+
 # Service Annotations
 
 On different levels:
@@ -121,6 +140,7 @@ On different levels:
 @[31-33](Parameters)
 
 ---
+
 # Model Annotations
 
 * class
@@ -132,6 +152,7 @@ On different levels:
 @[41-45](Property)
 
 ---
+
 # Keep changes under control
 Unintended changes:
 * Refactoring
@@ -142,7 +163,9 @@ Unintended changes:
 
 Note:
 Spring Boot 2, JAX-RS and Swagger Jackson issue
+
 ---
+
 # Takeaway
 * Whenever you have API, it will grow through space and time
 * Maintenanace will consume resources
@@ -155,7 +178,11 @@ https://github.com/zeljkot/presentations/tree/master/swagger
 
 Note:
 How it worked out for Ivan and me.
+Try Swagger in your existing project!
+
 ---
-# Try Swagger in your existing project!
+
+name: agenda
+class: middle, center
 
 Thank you!
