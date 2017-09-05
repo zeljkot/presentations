@@ -1,6 +1,6 @@
 # Aligning REST
 # Client and Server
-
+<BR>
 ## Use Common Interface Definition to Avoid API Drift
 <BR>
 **Željko Trogrlić**
@@ -42,6 +42,7 @@ Each and every protocol has interface definition language:
 * SOAP WSDL
 
 **Generate both client and server from the single source of truth!**
+
 ---
 ![Alt text](http://github.com/OAI/OpenAPI-Style-Guide/raw/master/graphics/bitmap/OpenAPI_Logo_Pantone.png "Logo")
 # Swagger / OpenAPI
@@ -155,6 +156,6 @@ https://github.com/zeljkot/presentations/tree/master/swagger
 Note:
 How it worked out for Ivan and me.
 ---
-#Try Swagger in your existing project!
+# Try Swagger in your existing project!
 
 Thank you!
