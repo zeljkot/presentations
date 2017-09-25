@@ -14,6 +14,18 @@
 * Imperative: HOW
 * Declarative: WHAT
 
+---
+
+# Imperative example
+
++++?code=java-streams/example/src/main/java/streams/Imperative.java&lang=Java
+
+@[10-17](Imperative style)
+
+---
+
+# Declarative style
+
 Note:
 
 Wikipedia:
@@ -23,15 +35,127 @@ Wikipedia:
 
 Functional and logical programming languages
 
++++?code=java-streams/example/src/main/java/streams/Declarative.java&lang=Java
+
+@[10-13](Declarative style)
+
 ---
 
-# Imperative example
+# Filtering
 
-+++?code=java-streams/example/src/main/java/streams&lang=Java
+* filter(>=5) (1 3 **7** **8** 2 4 0 **9** **5**)
+* skip(4) (1 3 7 8 **2 4 0 9 5**)
+* limit(4) (**1 3 7 8** 2 4 0 9 5)
+* takeWhile(<5) (**1 3** 7 8 2 4 0 9 5)
+* dropWhile(<5) (1 3 **7 8 2 4 0 9 5**)
+* dropWhile(<5)/takewhile(>5) (1 3 **7 8** 2 4 0 9 5)
 
-@[3-5](Describe API)
+Note:
 
-# Declarative style
+GPS coordinates in station
+
++++?code=java-streams/example/src/main/java/streams/Filter.java&lang=Java
+
+---
+
+# Finding
+
+* findFirst
+* findAny
+* anyMatch
+* allMatch
+
++++?code=java-streams/example/src/main/java/streams/Find.java&lang=Java
+
+---
+
+# Converting (mapping)
+
+* map - 1 : 1
+* flatMap - 1 : _n_
+
++++?code=java-streams/example/src/main/java/streams/MapFlatMap.java&lang=Java
+
+@[11-13](map)
+@[18-20](flatMap)
+@[25-27](flatMap)
+
+---
+
+# Terminal
+
+* Either side-effect or value
+  * collect
+  * forEach
+  * count, sum, average...
+
++++?code=java-streams/example/src/main/java/streams/Terminal.java&lang=Java
+
+@[15-17](collect)
+@[19-21](collect)
+@[23](forEach)
+@[25-27](numeric)
+
+---
+
+# Folding / Reducing
+
+* reduce()
+* Also terminal
+* Sums up stream to single value
+
++++?code=java-streams/example/src/main/java/streams/FoldReduce.java&lang=Java
+
+@[13-14](reduce int)
+@[32-38](reduce area)
+@[46-51](fold area to chairs)
+
+---
+
+# Parallel processing
+
+* parallel()
+* simple way to activate multithreading
+
++++
+
+# Example
+
+```kotlin
+splitFiles(fileList, (60L * 1024 * 1024 * 1).toLong(), tempDir)
+    .mapIndexed { index, mutableList -> index to mutableList }
+    .parallelStream()
+    .map { (index, documents) -> index to binder.copy(children = Converter.makeTree(documents)) }
+    .forEach { (index, subBinder) ->
+        val subOutputFile = File(outputFile.parent, "${outputFile.nameWithoutExtension}-%03d.pdf".format(index))
+        coverAndMerge(subBinder, tempDir, subOutputFile, settings)
+        addBookmarks(subBinder, tempDir, subOutputFile, 1)
+    }
+```
+
++++?code=java-streams/example/src/main/java/streams/ParallelSimple.java&lang=Java
+
+---
+
+# Additional topics
+
+* Streams everywhere
+* Custom collector
+
++++?code=java-streams/example/src/main/java/streams/ChainList.java&lang=Java
+
+Lists everywhere - lots of object allocation
+
++++?code=java-streams/example/src/main/java/streams/ChainAndIntermediateTerminal.java&lang=Java
+
+Streams everywhere - less allocation
+
++++?code=java-streams/example/src/main/java/streams/Collector.java&lang=Java
+
+---
+# End-to-end
+
+From database to web client
 
 ---
 
