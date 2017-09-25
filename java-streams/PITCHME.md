@@ -56,7 +56,7 @@ GPS coordinates in station
 
 +++?code=java-streams/example/src/main/java/streams/Filter.java&lang=Java
 
-@[12-13](filter(>=5) 1 3 **7** **8** 2 4 0 **9** **5**)
+@[12-13](filter\(>=5\) 1 3 **7** **8** 2 4 0 **9** **5**)
 @[15-16](skip(5) 1 3 7 8 2 **4 0 9 5**)
 @[18-19](limit(4) **1 3 7 8 2** 4 0 9 5)
 @[21-22](takeWhile(<5) **1 3** 7 8 2 4 0 9 5)
@@ -163,6 +163,8 @@ Lists everywhere - lots of object allocation
 Streams everywhere - less allocation
 
 +++?code=java-streams/example/src/main/java/streams/Parallel.java&lang=Java
+
+Custom collector
 
 ---
 # End-to-end
