@@ -56,12 +56,12 @@ GPS coordinates in station
 
 +++?code=java-streams/example/src/main/java/streams/Filter.java&lang=Java
 
-@[12-13](filter(>=5) (1 3 **7** **8** 2 4 0 **9** **5**))
-@[15-16](skip(4) (1 3 7 8 **2 4 0 9 5**))
-@[18-19](limit(4) (**1 3 7 8** 2 4 0 9 5))
-@[21-22](takeWhile(<5) (**1 3** 7 8 2 4 0 9 5))
-@[24-25](dropWhile(<5) (1 3 **7 8 2 4 0 9 5**))
-@[27-29](dropWhile(<5)/takewhile(>5) (1 3 **7 8** 2 4 0 9 5))
+@[12-13](filter(>=5) 1 3 **7** **8** 2 4 0 **9** **5**)
+@[15-16](skip(5) 1 3 7 8 2 **4 0 9 5**)
+@[18-19](limit(4) **1 3 7 8 2** 4 0 9 5)
+@[21-22](takeWhile(<5) **1 3** 7 8 2 4 0 9 5)
+@[24-25](dropWhile(<5) 1 3 **7 8 2 4 0 9 5**)
+@[27-29](dropWhile(<5)/takewhile(>5) 1 3 **7 8** 2 4 0 9 5)
 
 ---
 
@@ -146,7 +146,7 @@ splitFiles(fileList, (60L * 1024 * 1024 * 1).toLong(), tempDir)
 ```
 
 +++?code=java-streams/example/src/main/java/streams/ParallelSimple.java&lang=Java
-
+@[25]
 ---
 
 # Additional topics
@@ -173,10 +173,13 @@ From database to web client
 
 # Takeaway
 
-https://**github**.com/**zeljkot**/presentations/tree/master/java-stream
+* Code with streams is easier to write
+* Code with streams is easier to understand
+* Streams provide cheap parallelism
 
-Note:
-Try in your existing project!
+* Some tools provide automatic conversion - so go and convert!
+
+https://**github**.com/**zeljkot**/presentations/tree/master/java-stream
 
 ---
 <!-- .slide: class="center" -->
