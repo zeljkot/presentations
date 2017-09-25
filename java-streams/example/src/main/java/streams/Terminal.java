@@ -16,14 +16,15 @@ public class Terminal {
                 .map(person -> person.getLastName())
                 .collect(Collectors.joining());
 
-        String nicerLastNames = stream
+        List<String> lastNamesList = stream
                 .map(Person::getLastName)
-                .collect(Collectors.joining(",", "[", "]"));
+                .collect(Collectors.toList());
 
         stream.forEach(person -> System.out.println("person.getLastName() = " + person.getLastName()));
 
-        long count = IntStream.range(0, 20).count();
-        int sum = IntStream.range(0, 20).sum();
-        OptionalDouble average = IntStream.range(0, 20).average();
+        IntStream intStream = IntStream.range(0, 20);
+        long count = intStream.count();
+        int sum = intStream.sum();
+        OptionalDouble average = intStream.average();
     }
 }

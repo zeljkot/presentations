@@ -1,6 +1,6 @@
 # Java Streams
 <BR>
-### Use Common Interface Definition to Avoid API Drift
+### Not how, what
 
 <BR>
 **Željko Trogrlić**
@@ -56,6 +56,13 @@ GPS coordinates in station
 
 +++?code=java-streams/example/src/main/java/streams/Filter.java&lang=Java
 
+@[12-13](filter(>=5) (1 3 **7** **8** 2 4 0 **9** **5**))
+@[15-16](skip(4) (1 3 7 8 **2 4 0 9 5**))
+@[18-19](limit(4) (**1 3 7 8** 2 4 0 9 5))
+@[21-22](takeWhile(<5) (**1 3** 7 8 2 4 0 9 5))
+@[24-25](dropWhile(<5) (1 3 **7 8 2 4 0 9 5**))
+@[27-29](dropWhile(<5)/takewhile(>5) (1 3 **7 8** 2 4 0 9 5))
+
 ---
 
 # Finding
@@ -66,6 +73,11 @@ GPS coordinates in station
 * allMatch
 
 +++?code=java-streams/example/src/main/java/streams/Find.java&lang=Java
+
+@[13-15](findFirst)
+@[17-19](findAny)
+@[21-22](anyMatch)
+@[24-25](allMatch)
 
 ---
 
@@ -94,7 +106,7 @@ GPS coordinates in station
 @[15-17](collect)
 @[19-21](collect)
 @[23](forEach)
-@[25-27](numeric)
+@[26-28](Numeric)
 
 ---
 
@@ -150,7 +162,7 @@ Lists everywhere - lots of object allocation
 
 Streams everywhere - less allocation
 
-+++?code=java-streams/example/src/main/java/streams/Collector.java&lang=Java
++++?code=java-streams/example/src/main/java/streams/Parallel.java&lang=Java
 
 ---
 # End-to-end
