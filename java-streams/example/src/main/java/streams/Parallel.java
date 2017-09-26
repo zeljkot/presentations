@@ -1,5 +1,7 @@
 package streams;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.function.BiConsumer;
@@ -45,14 +47,15 @@ public class Parallel {
 
                     @Override
                     public Set<Characteristics> characteristics() {
-                        return Set.of(Characteristics.CONCURRENT);
+                        //return Set.of(Characteristics.CONCURRENT);
+                        return new HashSet<>(Arrays.asList(Characteristics.CONCURRENT));
                     }
                 });
     }
 
     public static void main(String[] args) {
         Stream<Person> people = IntStream.range(0, 10000000)
-                .mapToObj(operand -> new Person("First " + operand, "Last " + operand, true, new LinkedList<>()));
+                .mapToObj(id -> new Person(id, "First " + id, "Last " + id, true, new LinkedList<>()));
         long start = System.currentTimeMillis();
         String result = allNames(people);
         System.out.println("time = " + ((System.currentTimeMillis() - start) / 1000.0));

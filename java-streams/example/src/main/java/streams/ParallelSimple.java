@@ -18,7 +18,7 @@ public class ParallelSimple {
     public static void main(String[] args) {
         System.out.println("Prepare");
         List<Person> people = IntStream.range(0, 10000000)
-                .mapToObj(operand -> new Person("First " + operand, "Last " + operand, true, new LinkedList<>()))
+                .mapToObj(id -> new Person(id, "First " + id, "Last " + id, true, new LinkedList<>()))
                 .collect(Collectors.toList());
         System.out.println("GO");
         long start = System.currentTimeMillis();

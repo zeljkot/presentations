@@ -1,31 +1,48 @@
-group 'link.zeljko.presentations'
-version '1.0-SNAPSHOT'
+group "link.zeljko.presentations"
+version "1.0-SNAPSHOT"
 
 buildscript {
-    ext.kotlin_version = '1.2-M2'
 
     repositories {
-        maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
         mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'kotlin'
+apply {
+    plugin "kotlin"
+    plugin "kotlin-jpa"
+    plugin "kotlin-spring"
+    plugin "org.springframework.boot"
+    plugin "io.spring.dependency-management"
+}
 
 sourceCompatibility = 1.8
 
 repositories {
-    maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
     mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile("org.springframework.boot:spring-boot-starter-web")
+
+    runtime("org.hsqldb:hsqldb")
+
+    testCompile group: "junit", name: "junit", version: "4.12"
 }
 
 compileKotlin {
