@@ -18,7 +18,7 @@
 
 # Imperative example
 
-+++?code=java-streams/example/java/src/main/java/streams/Imperative.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/Imperative.java&lang=Java
 
 @[10-17](Imperative style)
 
@@ -35,7 +35,7 @@ Wikipedia:
 
 Functional and logical programming languages
 
-+++?code=java-streams/example/java/src/main/java/streams/Declarative.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/Declarative.java&lang=Java
 
 @[10-13](Declarative style)
 
@@ -55,7 +55,7 @@ Note:
 GPS coordinates in station
  1 3 **7** **8** 2 4 0 **9** **5**
 
-+++?code=java-streams/example/java/src/main/java/streams/Filter.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/Filter.java&lang=Java
 
 @[12-13](filter{>=5} {1 3 **7** **8** 2 4 0 **9** **5**})
 @[15-16](skip{5} 1 3 7 8 2 **4 0 9 5**})
@@ -73,7 +73,7 @@ GPS coordinates in station
 * anyMatch
 * allMatch
 
-+++?code=java-streams/example/java/src/main/java/streams/Find.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/Find.java&lang=Java
 
 @[13-15](findFirst)
 @[17-19](findAny)
@@ -87,7 +87,7 @@ GPS coordinates in station
 * map - 1 : 1
 * flatMap - 1 : _n_
 
-+++?code=java-streams/example/java/src/main/java/streams/MapFlatMap.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/MapFlatMap.java&lang=Java
 
 @[11-13](map)
 @[18-20](flatMap)
@@ -102,7 +102,7 @@ GPS coordinates in station
   * forEach
   * count, sum, average...
 
-+++?code=java-streams/example/java/src/main/java/streams/Terminal.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/Terminal.java&lang=Java
 
 @[15-17](collect)
 @[19-21](collect)
@@ -117,7 +117,7 @@ GPS coordinates in station
 * Also terminal
 * Sums up stream to single value
 
-+++?code=java-streams/example/java/src/main/java/streams/FoldReduce.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/FoldReduce.java&lang=Java
 
 @[13-14](reduce int)
 @[32-38](reduce area)
@@ -146,7 +146,7 @@ splitFiles(fileList, (60L * 1024 * 1024 * 1).toLong(), tempDir)
     }
 ```
 
-+++?code=java-streams/example/java/src/main/java/streams/Parallel.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/Parallel.java&lang=Java
 @[25]
 ---
 
@@ -155,15 +155,15 @@ splitFiles(fileList, (60L * 1024 * 1024 * 1).toLong(), tempDir)
 * Streams everywhere
 * Custom collector
 
-+++?code=java-streams/example/java/src/main/java/streams/ChainList.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/ChainList.java&lang=Java
 
 Lists everywhere - lots of object allocation
 
-+++?code=java-streams/example/java/src/main/java/streams/ChainAndIntermediateTerminal.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/ChainAndIntermediateTerminal.java&lang=Java
 
 Streams everywhere - less allocation
 
-+++?code=java-streams/example/java/src/main/java/streams/CustomCollector.java&lang=Java
++++?code=java-streams/examples/java/src/main/java/streams/CustomCollector.java&lang=Java
 
 Custom collector
 
