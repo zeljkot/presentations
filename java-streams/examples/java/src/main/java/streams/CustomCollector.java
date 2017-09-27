@@ -1,7 +1,5 @@
 package streams;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.function.BiConsumer;
@@ -31,7 +29,10 @@ public class CustomCollector {
 
                     @Override
                     public BinaryOperator<StringBuffer> combiner() {
-                        return (buffer1, buffer2) -> buffer1.append(buffer2);
+                        return (buffer1, buffer2) -> {
+                            System.out.println("combine = " + buffer1 + " and " + buffer2);
+                            return buffer1.append(buffer2);
+                        };
                     }
 
                     @Override
@@ -44,8 +45,8 @@ public class CustomCollector {
 
                     @Override
                     public Set<Characteristics> characteristics() {
-                        //return Set.of(Characteristics.CONCURRENT);
-                        return new HashSet<>(Arrays.asList(Characteristics.CONCURRENT));
+                        return Set.of(Characteristics.CONCURRENT);
+                        //return new HashSet<>(Arrays.asList(Characteristics.CONCURRENT));
                     }
                 });
     }
@@ -59,6 +60,6 @@ public class CustomCollector {
                         true,
                         new LinkedList<>()
                 ));
-        System.out.println("names = " + allNames(people));
+        System.out.println("names = " + allNames(people.parallel()));
     }
 }

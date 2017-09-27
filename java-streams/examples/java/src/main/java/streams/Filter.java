@@ -18,7 +18,7 @@ public class Filter {
         Stream<Person> justFirstGeneration = stream
                 .limit(5);
 
-        /*Stream<Person> firstUnemployed = stream
+        Stream<Person> firstUnemployed = stream
                 .takeWhile(person -> !person.isEmployed());// Java 9
 
         Stream<Person> skipFirstUnemployed = stream
@@ -26,6 +26,6 @@ public class Filter {
 
         Stream<Person> skipUnemployedAndTakeWhileEmployed = stream
                 .dropWhile(person -> !person.isEmployed()) // Java 9
-                .takeWhile(person -> person.isEmployed());// Java 9*/
+                .takeWhile(person -> person.isEmployed());// Java 9
     }
 }

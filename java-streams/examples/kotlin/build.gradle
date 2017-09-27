@@ -1,0 +1,37 @@
+group "link.zeljko.presentations.streams"
+version "1.0-SNAPSHOT"
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+    }
+}
+
+apply {
+    plugin "kotlin"
+}
+
+sourceCompatibility = 1.9
+
+repositories {
+    mavenCentral()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+
+    testCompile group: "junit", name: "junit", version: "4.12"
+}
+
