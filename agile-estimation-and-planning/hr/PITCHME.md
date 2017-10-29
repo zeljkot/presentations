@@ -94,20 +94,34 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 {
   "data": {
     "datasets": [{
-      "label": "Story points",
+      "label": "Points",
       "data":
         [
-          {"x": 1, "y": 1},
-          {"x": 1, "y": -1},
-          {"x": -1, "y": 1},
-          {"x": -1, "y": -1}
+          {"x": randomScalingFactor(), "y": randomScalingFactor()},
+          {"x": randomScalingFactor(), "y": randomScalingFactor()},
+          {"x": randomScalingFactor(), "y": randomScalingFactor()},
+          {"x": randomScalingFactor(), "y": randomScalingFactor()}
         ]
     }]
   },
   "options": { 
     "label": "My Label",
-    "xAxisID": "Poslovna vrijednost" ,
-    "yAxisID": "Tehnička kompleksnost" 
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Poslovna vrijednost'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Rizik'
+        }
+      }]
+    }
   }
 }
 -->
