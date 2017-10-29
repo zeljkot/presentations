@@ -1,0 +1,4 @@
+theme-override: assets/css/PITCHME.css
+transition: fade
+vertical-center: false
+charts: true
