@@ -1,9 +1,7 @@
-# # Java Streams
+# Agilna procjena i planiranje
 # <BR>
-# ### Not how, what
-# 
-# 
-# 
+## Stanislav Strešnjak 
+## Željko Trogrlić
 Note:
 Kao u američkom nogometu, četiri četvrtine
 ---
@@ -91,11 +89,29 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 * Agile: što i kako paralelno
 +++
 # Kombinirano ocjenjivanje
-<p align="left">Vrijednost</p>
-
-
-
-<p align="center">Kompleksnost</p>
+<canvas data-chart="scatter">
+<!-- 
+{
+  "data": {
+    "datasets": [{
+      "label": "Story points",
+      "data":
+        [
+          {"x": 1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": -1, "y": -1}
+        ]
+    }]
+  },
+  "options": { 
+    "label": "My Label",
+    "xAxisID": "Poslovna vrijednost" ,
+    "yAxisID": "Tehnička kompleksnost" 
+  }
+}
+-->
+</canvas>
 ---
 
 
@@ -182,15 +198,15 @@ Za posjetitelje Version One stranice Version One je najbolji.
 <canvas data-chart="pie">
 <!-- 
 {
- "data": {
-"labels": ["SAFe 4.5", "Scrum scrumova", "Agile Portfolio Management (APM)", "Interne metode", "Lean Management", "Large Scale Scrum (LeSS)", "Disciplined Agile (DA)", "RAGE", "Nexus"],
-  "datasets": [
-   {
-    "data":[28, 27, 13, 4, 4, 3, 1, 1, 1],
-   },
-  ]
- }, 
- "options": { "responsive": "true" }
+  "data": {
+    "labels": ["SAFe 4.5", "Scrum scrumova", "Agile Portfolio Management (APM)", "Interne metode", "Lean Management", "Large Scale Scrum (LeSS)", "Disciplined Agile (DA)", "RAGE", "Nexus"],
+    "datasets": [
+      {
+        "data":[28, 27, 13, 4, 4, 3, 1, 1, 1]
+      }
+    ]
+  }, 
+  "options": { "responsive": "true" }
 }
 -->
 </canvas>
@@ -209,9 +225,13 @@ Mr. Milan Sijerković: Scrum scrumova -  Bog bogova!
 ---
 # SAFe 4.5
 * Portfolio
-* Value Train (Solution xxx)
-* Program - Agile Release Train (ART) 50-125 people, PI 5 iterations
-* Team - Scrum
+* Value Train
+* Program
+* Team
+
+Note:
+Value Train = Solution roles
+Team = Scrum
 ---
 # Team
 * 2 week sprint
