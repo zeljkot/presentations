@@ -5,7 +5,18 @@
 Note:
 Kao u američkom nogometu, četiri četvrtine
 ---
-# Planiranje
+
+
+# Scrum podsjetnik
+
+
+---
+
+
+
+# I. Planiranje
+
+
 Note:
 Prebacivanje rokova
 * Skrpan software
@@ -30,8 +41,7 @@ Prebacivanje rokova
 * Tim sudjeluje u definiciji i procjeni
 ---
 # Korisničke priče: format
-> Kao *uloga*, želim *funkcija* tako da *vrijednost*
-
+Kao *uloga*, želim *funkcija* tako da *vrijednost*
 +++
 Primjeri:
 * Kao *kupac*, želim *moći resetirati svoju zaporku* tako da *se mogu prijaviti i ako je izgubim*
@@ -47,6 +57,7 @@ Note:
 * **E**stimable
 * **S**mall (3-4 dana, <sprint)
 * **T**estable
+
 Note:
 Testable - virtualni razgovor - dokaži!
 ---
@@ -57,6 +68,7 @@ Testable - virtualni razgovor - dokaži!
 * **P**rocjenljiva
 * **M**ala
 * **P**rovjerljiva
+
 Note:
 Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 ---
@@ -70,16 +82,20 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 # Određivanje redoslijeda korisnih priča
 * Grupiranje u teme
 * Parametri
-  * Poslovna vrijednost
-  * Tehnička kompleksnost
+  * Poslovna vrijednost / poželjnost
+  * Cijena
   * Stjecanje znanja
   * Uklanjanje rizika
 +++
 # Poslovno ocjenjivanje
 * Zarada
 * Ušteda
+* Poželjnost: Kano model zahtjeva
+  * Obvezni
+  * Linearni
+  * Uzbudljivi (exciters & delighters)
 +++
-# Tehnička kompleksnost
+# Cijena
 * Cijena razvoja kroz story pointe
 +++
 # Stjecanje znanja
@@ -92,6 +108,25 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 <canvas data-chart="scatter">
 <!-- 
 {
+  "options": { 
+    "label": "My Label",
+    "scales": {
+      "xAxes": [{
+        "display": true,
+        "scaleLabel": {
+          "display": true,
+          "labelString": 'Poslovna vrijednost'
+        }
+      }],
+      "yAxes": [{
+        "display": true,
+        "scaleLabel": {
+          "display": true,
+          "labelString": 'Rizik'
+        }
+      }]
+    }
+  },
   "data": {
     "datasets": [{
       "label": "Points",
@@ -103,25 +138,6 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
           {"x": randomScalingFactor(), "y": randomScalingFactor()}
         ]
     }]
-  },
-  "options": { 
-    "label": "My Label",
-    scales: {
-      xAxes: [{
-        display: true,
-        scaleLabel: {
-          display: true,
-          labelString: 'Poslovna vrijednost'
-        }
-      }],
-      yAxes: [{
-        display: true,
-        scaleLabel: {
-          display: true,
-          labelString: 'Rizik'
-        }
-      }]
-    }
   }
 }
 -->
@@ -130,7 +146,7 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 
 
 # Metoda agilne procjene
-# Planiranje sprinta
+# Planiranje izdanja
 
 
 ---
@@ -143,6 +159,8 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 * Procjena težine vola
 * Plymouth, 1906
 * Stručnjaci protiv mnoštva
+Note:
+Vježba: lakša i teža, težina
 +++
 # Delphi i Wideband Delphi
 * Delphi: 1950-1960, hladni rat, RAND Corporation
@@ -162,7 +180,40 @@ Dr. Strangelove, 1964.: Stanley Kubrick an Peter Sellers
 
 Note:
 Meni treba toliko, tebi toliko
+1 bod = Gaussova krivulja
 ---
+# Planiranje izdanja
+* Teme
+* Pristupi:
+  *Po osobinama
+  * Po vremenu
+* Trajanje Sprinta
+Note:
+Waterfall definira što prije nego kako, agilni paraleleno.
+---
+### Trajanje Sprinta
+* Koliko brzo tim može stvarati
+* Koliko brzo PO može primati
+* Tehnička ograničenja
+Note:
+* Trajanje projekta
+* Nesigurnost
+* Dostupnost korisnika
+* Stabilnost zahtjeva
+* Uvježbanost tima / fiksni troškovi
+* Osjećaj hitnosti
+* Tehnička ograničenja
+Napraviti bar 4-5 iteracija!
++++
+# Magični 13. tjedan
+* 3. mjeseca je 13 tjedana
+* 6 * 2 + 1 ili
+* 4 * 3 + 1
++++
+# Kad početi Sprint
+* izbjegavajte panični petak
+---
+
 
 # Planiranje Sprinta
 
@@ -183,9 +234,7 @@ Stanislav
 
 
 # Praćenje napretka
-# Planiranje releasea
 # Skalabilnost
-
 
 ---
 # Praćenje napretka
@@ -193,8 +242,6 @@ Stanislav
 # Kanban elementi (ploča, ograničavanje posla)
 ---
 # Burndown grafikoni
----
-# Planiranje inačica
 ---
 # Skalabilnost
 * Fraktalna organizacija
