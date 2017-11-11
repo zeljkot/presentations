@@ -72,14 +72,7 @@ Testable - virtualni razgovor - dokaži!
 Note:
 Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 ---
-# Značajke dobrog zadatka
-* **S**pecific
-* **M**easurable
-* **A**chievable
-* **R**elevant
-* **T**ime-Boxed
----
-# Određivanje redoslijeda korisnih priča
+# Određivanje redoslijeda korisničkih priča
 * Grupiranje u teme
 * Parametri
   * Poslovna vrijednost / poželjnost
@@ -94,6 +87,9 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
   * Obvezni
   * Linearni
   * Uzbudljivi (exciters & delighters)
+
+Note:
+The Kano model is a theory of product development and customer satisfaction developed in the 1980s by Professor Noriaki Kano, which classifies customer preferences into five categories.
 +++
 # Cijena
 * Cijena razvoja kroz story pointe
@@ -104,6 +100,14 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 * Waterfall: što pa kako
 * Agile: što i kako paralelno
 +++
+# Rizik
+* Primjeri
+  * Rok
+  * Cijena
+  * Funkcionalnost
+* Tipovi
+  * Poslovni
+  * Tehnički
 # Kombinirano ocjenjivanje
 <canvas data-chart="scatter">
 <!-- 
@@ -167,6 +171,7 @@ Vježba: lakša i teža, težina
   * Ciklusi prezentiranja i ocjenjivanja
 * Wideband Delphi: više komunikacije
 Note:
+Research ANd Development
 Dr. Strangelove, 1964.: Stanley Kubrick an Peter Sellers
 +++
 # Agilni poker
@@ -175,17 +180,19 @@ Dr. Strangelove, 1964.: Stanley Kubrick an Peter Sellers
 * Veće procjene imaju veću pogrešku
 ---
 # Mjerne jedinice
-* Story points
-* Idealni (programerski) dani
+* Relativne jedinice
+  * Story points
+  * Idealni (programerski) dani
 
 Note:
 Meni treba toliko, tebi toliko
 1 bod = Gaussova krivulja
+Šijavica
 ---
 # Planiranje izdanja
 * Teme
 * Pristupi:
-  *Po osobinama
+  * Po osobinama
   * Po vremenu
 * Trajanje Sprinta
 Note:
@@ -273,13 +280,14 @@ Za posjetitelje Version One stranice Version One je najbolji.
 </canvas>
 ---
 # Scrum scrumova
-* Vurtualni nad-tim
+* Virtualni nad-tim
 * Daily sastavljen od predstavnika timova
   * nakon timskog dailya
-  * scrum master, ostali po potrebi
+  * sudionici: po potrebi
 * Scrum scrumova master odgovoran za isporuku
 * Meta scrum: PO tim
 * Executive Action Team (EAT): menadžerski tim
+* Problem: koordinacija timova
 
 Note:
 Mr. Milan Sijerković: Scrum scrumova -  Bog bogova!
