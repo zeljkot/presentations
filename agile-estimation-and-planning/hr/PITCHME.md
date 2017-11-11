@@ -108,6 +108,7 @@ The Kano model is a theory of product development and customer satisfaction deve
 * Tipovi
   * Poslovni
   * Tehnički
++++
 # Kombinirano ocjenjivanje
 <canvas data-chart="scatter">
 <!-- 
