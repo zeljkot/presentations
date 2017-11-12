@@ -43,7 +43,7 @@ Prebacivanje rokova
 ---
 # Korisničke priče: format
 Kao *uloga*, želim *funkcija* tako da *vrijednost*
-+++
+---
 Primjeri:
 * Kao *kupac*, želim *moći resetirati svoju zaporku* tako da *se mogu prijaviti i ako je izgubim*
 * Kao *korisnik mobitela*, želim *ga moći brzo utišati* tako da *mi ne zvoni kad odem kod liječnika ili u kino*
@@ -52,7 +52,7 @@ Primjeri:
 Note:
 Kako se mijenja svjetlo na Peuogetu. 400 km puta, granica, sijalica.
 Želimo Google Maps!
-+++
+---
 # Elementi dobre korisničke priče (EN)
 * **I**ndependent
 * **N**egotiable
