@@ -2,6 +2,7 @@
 # <BR>
 ## Stanislav Strešnjak 
 ## Željko Trogrlić
+
 Note:
 Kao u američkom nogometu, četiri četvrtine
 ---
@@ -47,9 +48,11 @@ Primjeri:
 * Kao *kupac*, želim *moći resetirati svoju zaporku* tako da *se mogu prijaviti i ako je izgubim*
 * Kao *korisnik mobitela*, želim *ga moći brzo utišati* tako da *mi ne zvoni kad odem kod liječnika ili u kino*
 * Kako *vlasnik automobila*, želim *moći brzo i bez posebnog alata promijeniti sijalice* tako da *mogu brzo nastaviti voziti ako pregore*
+
 Note:
+Kako se mijenja svjetlo na Peuogetu. 400 km puta, granica, sijalica.
 Želimo Google Maps!
----
++++
 # Elementi dobre korisničke priče (EN)
 * **I**ndependent
 * **N**egotiable
@@ -60,7 +63,7 @@ Note:
 
 Note:
 Testable - virtualni razgovor - dokaži!
----
++++
 # Elementi dobre korisničke priče (HR)
 * **N**eovisna
 * **P**regovorljiva
@@ -71,6 +74,12 @@ Testable - virtualni razgovor - dokaži!
 
 Note:
 Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
+Kraj: 0:15
+---
+Vježba: pisanje priče
+
+Note:
+Kraj: 0:30
 ---
 # Određivanje redoslijeda korisničkih priča
 * Grupiranje u teme
@@ -83,13 +92,18 @@ Zaključak: u hrvatskom previše riječi počinje sa zatvornikom.
 # Poslovno ocjenjivanje
 * Zarada
 * Ušteda
-* Poželjnost: Kano model zahtjeva
+* Poželjnost: Kano model ocjene zahtjeva
   * Obvezni
   * Linearni
   * Uzbudljivi (exciters & delighters)
+  * Nebitni
+  * Obrnuti (nepoželjni)
 
 Note:
 The Kano model is a theory of product development and customer satisfaction developed in the 1980s by Professor Noriaki Kano, which classifies customer preferences into five categories.
+* Kako se osjećate ako se uključi
+* Kako se osjećate ako se ne uključi
+
 +++
 # Cijena
 * Cijena razvoja kroz story pointe
@@ -147,11 +161,13 @@ The Kano model is a theory of product development and customer satisfaction deve
 }
 -->
 </canvas>
+
+Note:
+Kraj: 1:00
 ---
 
 
 # Metoda agilne procjene
-# Planiranje izdanja
 
 
 ---
@@ -160,10 +176,16 @@ The Kano model is a theory of product development and customer satisfaction deve
 * Delphi i Wideband Delphi
 * Agilni poker
 +++
+Vježba: laki i teški zadatak
+
+Note:
+Kraj: 1:10
++++
 # Mudrost mnoštva
 * Procjena težine vola
 * Plymouth, 1906
 * Stručnjaci protiv mnoštva
+
 Note:
 Vježba: lakša i teža, težina
 +++
@@ -171,6 +193,7 @@ Vježba: lakša i teža, težina
 * Delphi: 1950-1960, hladni rat, RAND Corporation
   * Ciklusi prezentiranja i ocjenjivanja
 * Wideband Delphi: više komunikacije
+
 Note:
 Research ANd Development
 Dr. Strangelove, 1964.: Stanley Kubrick an Peter Sellers
@@ -189,20 +212,51 @@ Note:
 Meni treba toliko, tebi toliko
 1 bod = Gaussova krivulja
 Šijavica
+Kraj: 1:26
+---
+
+Vježba: poker
+
+Note:
+Kraj 1:40
+---
+
+
+# Priprema, pozor, release!
+
+
 ---
 # Planiranje izdanja
-* Teme
-* Pristupi:
-  * Po osobinama
-  * Po vremenu
-* Trajanje Sprinta
+* Odrediti uvjete privaćanja (uspjeha)
+* Procijeniti priče
+* Odrediti trajanje sprinta
+* Procijeniti brzinu
+* Odrediti prioritet priča
+* Izabrati priče ili završni nadnevak
+---
+# Određivanje uvjete privaćanja
+* Po zahtjevima
+  * Fiksiraju se zahtjevi, vrijeme je klizno
+* Po vremenu
+  * Fiksirano je vrijeme, zahtjevi nisu
+
+Note:
+Do početka turističke sezone ili Božića
+---
+# Procjena priča ili tema
+* Priče
+* Za veće projekte, teme
+
 Note:
 Waterfall definira što prije nego kako, agilni paraleleno.
 ---
-### Trajanje Sprinta
+# Trajanje Sprinta
+* 2-4 tjedna
 * Koliko brzo tim može stvarati
 * Koliko brzo PO može primati
 * Tehnička ograničenja
+* Napraviti bar 4-5 iteracija!
+
 Note:
 * Trajanje projekta
 * Nesigurnost
@@ -211,15 +265,29 @@ Note:
 * Uvježbanost tima / fiksni troškovi
 * Osjećaj hitnosti
 * Tehnička ograničenja
-Napraviti bar 4-5 iteracija!
-+++
+---
+# Procjena brzine
+* Poznati tim, poznata brzina
+* Probni sprint
+* Uzorkovanje različitih priča
+  * Tip
+  * Trajanje
+* Uzeti u obzir praznike, godišnje i sl.  
+---
+# Kad završavamo?
+* Početna lista priča... 
+* ...ili krajnji nadnevak
+---
+# Kad početi Sprint
+* izbjegavajte panični petak
+
+Note:
+Kraj u ponedjeljak?!
+---
 # Magični 13. tjedan
 * 3. mjeseca je 13 tjedana
 * 6 * 2 + 1 ili
 * 4 * 3 + 1
-+++
-# Kad početi Sprint
-* izbjegavajte panični petak
 ---
 
 
@@ -302,9 +370,10 @@ Mr. Milan Sijerković: Scrum scrumova -  Bog bogova!
 Note:
 Value Train = Solution roles
 Team = Scrum
----
++++
 # Team
 * 2 week sprint
++++
 # Program - roles
 * Roles 
   * Agile Release Train (ART)
@@ -313,12 +382,14 @@ Team = Scrum
   * Release Train Engineer = Scrum Master
   * Program manager = Scrum Master
   * System architect: makes architectural runway
++++
 # Program - Process
   * Program increment (PI) = 5 iterations
   * Scrum of scrums every 2 weeks
   * System demo every 2 weeks
   * Last week - innovation and planning (IP)  
   * Planning meeting (vision + planning)
++++
 # Program - Artifacts
   * Features = user stories
   * Program board = Scrum Board
@@ -341,3 +412,11 @@ Team = Scrum
   * Sprint
 * Dva planiranja sprinta
 ---
+# Trajanje sastanaka
+* Planiranje: 2 sata / tjedan
+* Grooming/refinement: 2-4 sata / tjedan
+* Review: 1 sat / tjedan
+* Retrospektiva: 0.75 sat / tjedan
+---
+Note:
+Usporedba s waterfallom i change managementom
