@@ -1,0 +1,20 @@
+spring:
+
+  devtools.remote.secret: secretbacon
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/sausages}
+    username: ${DB_USERNAME:sausage_user}
+    password: ${DB_PASSWORD:sausage_password}
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect # autodetect bug (clob) fix
+    generate-ddl: true
+    hiberante.ddl-auto: create-drop
+    properties.hibernate:
+      show_sql: true
+      use_sql_comments: true
+      format_sql: true
+      temp.use_jdbc_metadata_defaults: false # autodetect bug (clob) fix
+      id.new_generator_mappings: true
+      ddl-auto: create-drop

@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+
+  backend:
+    build:
+      context: server
+    #image: registry/zeljko-link/sausage/backend:1.0.0
+    restart: always
+
+  database:
+    restart: always

@@ -1,0 +1,60 @@
+apply {
+    plugin 'kotlin'
+    plugin 'kotlin-spring'
+    plugin 'kotlin-jpa'
+    plugin 'org.springframework.boot'
+    plugin 'io.spring.dependency-management'
+}
+
+description = "Sausage Server"
+
+//sourceCompatibility = 1.8
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jre8")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
+
+    runtime("org.postgresql:postgresql:${postgresqlDriverVersion}")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+//bootRun {
+//    main = "link.zeljko.docker.server.ServerApp.kt"
+//}
+
+//bootRepackage {
+//    excludeDevtools = false
+//}
+
+//task stopServer(type: Exec) {
+//    // Continue tasks if there is no running container
+//    ignoreExitValue = true
+//    commandLine "docker", "stop", "sausage_server"
+//    doLast {
+//        if (execResult != 0) {
+//            commandLine "docker", "kill", "sausage_server"
+//            println "Unable to stop the container. Is it running?"
+//        }
+//    }
+//}
+//
+//task startServer(type: Exec) {
+//    commandLine "docker", "start", "sausage_server"
+//}
+//
+//build.finalizedBy(startServer)

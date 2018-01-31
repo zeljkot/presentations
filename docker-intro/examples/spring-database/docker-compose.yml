@@ -1,0 +1,24 @@
+version: '3.3'
+
+volumes:
+  sausage_db_volume:
+
+services:
+
+  backend:
+    container_name: sausage_backend
+    links:
+      - database:db_host
+
+  database:
+    build:
+      context: database
+    #image: registry/zeljko-link/sausage/database:1.0.0
+    container_name: sausage_db
+    restart: always
+    volumes:
+      - sausage_db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: 'sausages'
+      POSTGRES_USER: 'sausage_user'
+      POSTGRES_PASSWORD: 'sausage_password'
