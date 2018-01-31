@@ -9,9 +9,9 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Optional;
 
+@Api(value = "Person administration", tags = {"person"})
 @Component
 @Path("/persons")
-@Api(value = "Person administration", tags = {"person"})
 public class PersonsApiController {
 
     private static final String DEFAULT_SIZE_STRING = "20";
@@ -28,8 +28,8 @@ public class PersonsApiController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Iterable<Person> getAll(
-            @QueryParam("size")
             @ApiParam(value = "Size of array", defaultValue = DEFAULT_SIZE_STRING)
+            @QueryParam("size")
                     Integer size
     ) {
         if (size == null) {
