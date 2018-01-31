@@ -7,6 +7,8 @@ services:
 
   backend:
     container_name: sausage_backend
+    environment:
+      DB_URL: jdbc:postgresql://db_host:5432/sausages
     links:
       - database:db_host
 
