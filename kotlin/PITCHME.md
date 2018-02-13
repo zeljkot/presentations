@@ -1,10 +1,16 @@
-﻿﻿﻿﻿
-﻿﻿﻿# Kotlin JEE
+﻿﻿# Kotlin JEE
 
 ## Željko Trogrlić
 
 ---
 # What is Kotlin?
+
+* Statically typed programming language for modern multiplatform applications 
+* Characteristics:
+  * Concise
+  * Safe
+  * Interoperable
+* Multiparadigm (object/functional)
 
 ---
 # Isn't it Just for the Android?
@@ -24,6 +30,18 @@
 Note:
 Support in popular frameworks
 
++++
+# Expresiveness
+
+```kotlin
+val counter = 6
+
+val message = try {
+  getMessage()
+} catch (ex : Exception) {
+  ex.message
+}
+```
 ---
 # Case 1: Attack of the Getters and Setters
 
@@ -31,6 +49,8 @@ Support in popular frameworks
 * Data classes
  * equals(), hashCode(), toString()
 
+Note:
+Be careful with equals!
 ---
 # Example
 
@@ -38,7 +58,7 @@ Q: how many times you have to write "person" to create person property?
 
 +++
 
-```
+```java
 private Person person;
 
 public Person getPerson() {
@@ -53,11 +73,10 @@ void setPerson(Person person) {
 +++
 # Kotlin Version
 
-```
+```kotlin
 @Entity
-data class KittenEntity private constructor(
-        @Id
-        @GeneratedValue
+data class KittenEntity(
+        @Id @GeneratedValue
         var id: Int?,
         override var name: String,
         override var cuteness: Int // set Int.MAX_VALUE for Nermal
@@ -68,40 +87,41 @@ Note:
 No body
 
 ---
-# Case 2: Functional Service Class
+# Case 2: Immutable, Functional Service Class
 
-```
+```kotlin
 @Path("kitten")
-class KittenRestService @Inject constructor(private val kittenBusinessService: KittenBusinessService) {
+class KittenController @Inject constructor(
+    private val kittenService: KittenService) {
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    fun add(
-            kittenRest: KittenRest
-    ): Int = kittenRest
-            .let { KittenEntity(it.name, it.cuteness) }
-            .also { kittenBusinessService += it }
-            .let { it.id!! }
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  fun add(kittenRest: KittenRest): Int = 
+      kittenRest
+          .let { KittenEntity(it.name, it.cuteness) }
+          .also { kittenBusinessService += it }
+          .let { it.id!! }
 
 ```
 
 Note:
 Spring does not need parameter names
+Property @Inject is unnatural for Kotlin
 
----
++++
 # Advantages
 
-* constructor injection, no need for postXxx methods
+* constructor injection, no need for @PostConstruct methods
 * null safety
 * operator overloading
 * available parameter names (usability depends on framework)
 
-+++
-# Parameter names
+---
+# Case 3: Parameter names
 
 http://kitten.service/search?name=Garfield&weight=100
 
-```
+```kotlin
 @GET
 fun add(
     @QueryParam("name") name: String?,
@@ -109,11 +129,31 @@ fun add(
 ): List<Kitten>
 ```
 
+Note:
+-parameters stores formal parameter names of constructors and methods in the generated class file
+Required/nullable
+
++++
+# Jackson immutable classes 
+
+Constructor mapping needs metadata.
+
 ---
-# Case 3: Jackson immutable classes 
+# Adding Kotlin to Build File
+```groovy
+plugins {
+    id "org.jetbrains.kotlin.jvm" version '1.2'
+}
 
-Constructor mapping needs metadata
+apply plugin: 'kotlin'
+apply plugin: 'war'
 
+description = 'My Server'
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+```
 ---
 # Converting Entity Bean
 
@@ -134,7 +174,7 @@ Inspired by Effective Java
 
 ---
 # Parameterless constructor
-```
+```kotlin
 @Entity
 data class KittenEntity private constructor(
         @Id
@@ -150,7 +190,7 @@ data class KittenEntity private constructor(
 
 Frameworks cannot work with final classes.
 
-```
+```kotlin
 @Stateless
 open class KittenBusinessService {
 
@@ -161,21 +201,63 @@ open class KittenBusinessService {
 ```
 
 ---
-# What about EntityManager
+# Evolution of Property @Inject
 
-* It is injected in a different way (`@PersistenceContext`)
-* It must be nullable
+```kotlin
+protected val service: Service
+// ...
+service.persist(kitten)
+```
 
-```
-@PersistenceContext
-private var entityManager: EntityManager?
-```
-* Unless we declare it `lateinit` 
++++
 
+Must be nullable and mutable, so
+
+```kotlin
+protected var service: Service? = null
+// ...
+service.persist(kitten)
 ```
+
++++
+
+Must check for nulls, so
+
+```kotlin
+protected var service: Service? = null
+// ...
+service!!.persist(kitten)
+```
+
+---
+# `lateinit` to the Rescue
+
+```kotlin
+protected lateinit var service: Service
+// ...
+service.persist(kitten)
+```
+
+---
+# @Inject through Constructor
+
+```kotlin
+class KittenController @Inject constructor(
+    private val service: Service) {
+```
+
+---
+# What Anout EntityManager?
+
+No @Inject, no constructor injection
+
+```kotlin
 @PersistenceContext
 private lateinit var entityManager: EntityManager
+// ...
+entityManager.persist(kitten)
 ```
+
 ---
 # Taming the Kotlin with compiler plugins
 
@@ -186,7 +268,7 @@ private lateinit var entityManager: EntityManager
 ---
 # Parameterless constructors workaround
 
-```
+```groovy
 plugins {
   id("org.jetbrains.kotlin.plugin.noarg") version("x.x.x")
   id( "org.jetbrains.kotlin.plugin.jpa" ) version ( "x.x.x")
@@ -207,7 +289,7 @@ noArg {
 ---
 # Class opening workaround
 
-```
+```groovy
 plugins {
   ...
   id("org.jetbrains.kotlin.plugin.allopen") version("x.x.x")
@@ -227,7 +309,7 @@ allOpen {
 ---
 # Jackson Construction
 
-```
+```kotlin
 data class KittenRest(
   @param:JsonProperty("name")
   override val name: String,
@@ -237,7 +319,7 @@ data class KittenRest(
 ```
 with the help of jackson-module-kotlin becomes
 
-```
+```kotlin
 data class KittenRest(
   override val name: String,
   override val cuteness: Int
@@ -254,3 +336,15 @@ Not a compiler plugin.
 * Occasional problems with plugins
 * Converted frontend developers
 * Would I recommend it to a friend?
+
+---
+# What Can You Do Now?
+
+* Convert a unit test. Convert some more.
+* Play with language features.
+* Convert a production class.
+* Have fun!
+---
+
+
+# Thank you!
