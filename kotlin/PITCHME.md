@@ -330,12 +330,57 @@ Note:
 Not a compiler plugin.
 
 ---
+# Support in Spring
+
+* null safety
+ * Spring is annotated
+ * Spring detects Kotlin's "Type?"
+* Bean DSL
+* WebFlux DSL 
+
+Note:
+JSR-305 + Spring
+-Xjsr305=warn
+---
+# Spring Bean DSL
+
+```kotlin
+fun beans() = beans {
+    bean<UserHandler>()
+    bean<Routes>()
+    bean<WebHandler>("webHandler") {
+        RouterFunctions.toWebHandler(
+            ref<Routes>().router(),
+            HandlerStrategies.builder().viewResolver(ref()).build()
+        )
+    }
+    ...
+}
+```
+
+---
+# WebFlux DSL
+
+```
+router {
+    accept(TEXT_HTML).nest {
+        GET("/") { ok().render("index") }
+        GET("/sse") { ok().render("sse") }
+        GET("/users", userHandler::findAllView)
+    }
+    "/api".nest {
+        accept(APPLICATION_JSON).nest {
+            GET("/users", userHandler::findAll)
+        }
+    ...
+```
+
+---
 # Kotlin backend one year later
 
-* Going strong
+* Three and a half projects
 * Occasional problems with plugins
 * Converted frontend developers
-* Would I recommend it to a friend?
 
 ---
 # What Can You Do Now?
@@ -345,6 +390,10 @@ Not a compiler plugin.
 * Convert a production class.
 * Have fun!
 ---
+# Need more?
 
+Check three part series on
+http://zeljko.link
 
+---
 # Thank you!
