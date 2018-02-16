@@ -1,9 +1,10 @@
 ﻿﻿
 ![Javantura 2018](kotlin/javantura.png)
 
+
 # Kotlin JEE
 
-## Željko Trogrlić
+### Željko Trogrlić
 
 ---
 # Isn't it Just for the Android?
@@ -25,59 +26,13 @@
 Note:
 Support in popular frameworks
 
-+++
-# Expresiveness 1
-
-```java
-final List<String> names = new ArrayList<>();
-names.add("Pero");        
-```
-
-```kotlin
-val names = listOf<String>("Pero")
-```
-
-+++
-# Expresiveness 2
-
-```java
-String message;
-try {
-  message = getMessage();
-} catch (Exception ex){
-  message = ex.getMessage();
-}
-```
-
-```kotlin
-val message = try {
-  getMessage()
-} catch (ex : Exception) {
-  ex.message
-}
-```
-
 ---
 # Case 1: Attack of the Getters and Setters
 
 Q: how many times you have to write "person" to create person property?
 
 +++
-
-```java
-private Person person;
-
-public Person getPerson() {
-  return person;
-}
-
-void setPerson(Person person) {
-  this.person = person;
-}
-```
-
-+++
-# Kotlin Version
+# Kotlin Entities
 
 ```kotlin
 @Entity
@@ -281,29 +236,8 @@ Show decompiled code.
 ---
 # Result
 
-```kotlin
-@Entity
-data class KittenEntity private constructor(
-    @Id
-    @GeneratedValue
-    var id: Int?,
-    override var name: String,
-    override var cuteness: Int // set Int.MAX_VALUE for Nermal
-) : Kitten
-```
----
-# Kotlin class specifics
-* **Everything is final and public**
-* Frameworks need:
- * non-final classes
-  * wrappers with special sauce, like transactions
- * parameterless constructors
+* Parameterless constructor needed
 
-Note:
-Inspired by Effective Java
-
----
-# Parameterless constructor
 ```kotlin
 @Entity
 data class KittenEntity private constructor(
@@ -314,82 +248,6 @@ data class KittenEntity private constructor(
 ) : Kitten {
     private constructor() : this(null, "")
 }
-```
----
-# Opening classes up
-
-Frameworks cannot work with final classes.
-
-```kotlin
-@Stateless
-open class KittenBusinessService {
-
-    open fun add(kitten: KittenEntity) = ...
-
-    open fun find(id: Int): Optional<KittenEntity> = ...
-}
-```
-
----
-# Evolution of Property @Inject / @Autowire
-
-```kotlin
-protected val service: Service
-// ...
-service.persist(kitten)
-```
-
-Note:
-Explain evils of property injection.
-+++
-
-Must be nullable and mutable, so
-
-```kotlin
-protected var service: Service? = null
-// ...
-service.persist(kitten)
-```
-
-+++
-
-Must check for nulls, so
-
-```kotlin
-protected var service: Service? = null
-// ...
-service!!.persist(kitten)
-```
-
----
-# `lateinit` to the Rescue
-
-```kotlin
-protected lateinit var service: Service
-// ...
-service.persist(kitten)
-```
-
-This is the way to go with EntityManager!
-
----
-# @Inject through Constructor
-
-```kotlin
-class KittenController @Inject constructor(
-    private val service: Service) {
-```
-
----
-# What Anout EntityManager?
-
-No @Inject, no constructor injection
-
-```kotlin
-@PersistenceContext
-private lateinit var entityManager: EntityManager
-// ...
-entityManager.persist(kitten)
 ```
 
 ---
@@ -421,7 +279,33 @@ noArg {
 ```
 
 ---
-# Class opening workaround
+# Issues with Java EE Beans and Spring Components
+
+* Managed classes must be extended
+ * Create non-final classes, so framework can add wrappers with special sauce, like transactions
+* Kotlin classes
+ * **Everything is final and public**
+
+Note:
+Inspired by Effective Java
+
+---
+# Opening Classes Up
+
+Frameworks cannot work with final classes.
+
+```kotlin
+@Stateless
+open class KittenBusinessService {
+
+    open fun add(kitten: KittenEntity) = ...
+
+    open fun find(id: Int): Optional<KittenEntity> = ...
+}
+```
+
+---
+# Compiler Plugin Workaround
 
 ```groovy
 plugins {
@@ -432,6 +316,7 @@ plugins {
 apply {
   ...
   plugin("kotlin-allopen")
+  plugin("kotlin-spring")
 }
 
 allOpen {
@@ -439,6 +324,59 @@ allOpen {
   annotation("javax.ejb.Stateless")
 }
 ```
+
+---
+# @Inject / @Autowire Troubles
+
+```kotlin
+@Inject
+protected val service: Service
+// ...
+service.persist(kitten)
+```
+* Class initialization order
+ * Construct
+ * Inject values
+ * @PostConstruct
+
+--- 
+# @Inject / @Autowire Troubles
+
+```kotlin
+@Inject
+protected var service: Service? = null
+// ...
+service!!.persist(kitten)
+```
+
+* Injected values must
+ * accept null
+ * be mutable
+ * all calls must be null-safe
+
+---
+# `lateinit` to the Rescue
+
+```kotlin
+@Inject
+protected lateinit var service: Service
+// ...
+service.persist(kitten)
+```
+
+This is the way to go with EntityManager!
+
+---
+# @Inject through Constructor
+
+```kotlin
+class KittenController @Inject constructor(
+    private val service: Service) {
+```
+
+* all necessary values are available at construction time
+* constructor can use them
+* properties can be immutable and non-nullable
 
 ---
 # Support in Spring
@@ -489,22 +427,20 @@ router {
 ---
 # Kotlin backend one year later
 
-* Three and a half projects
-* Occasional problems with plugins
+* Three and a half projects running smoothly
+* More efficient and enjoyable than Java
 * Converted frontend developers
+
+---
+# Java vs Kotlin Today
 * Java is closing the gap
-* Kotlin guides you to better style
-
-Note:
-Java
-Java 8 on Android
--parameters Java 8
-Stream functions Java 9
-JEP 286 (var) 10
-
-Kotlin
-Extension and inline functions
-Operator overloading
+ * 8: -parameters adds name metadata
+ * 9: additional stream functions
+ * 10: JEP 286 - inferred vars
+* Kotlin guides you to better style, and has
+ * extension and inline functions
+ * operator overloading
+ * statemens as functions (if, try, when)
 ---
 # What Can You Do Now?
 
@@ -517,6 +453,23 @@ Operator overloading
 
 Check three part series at
 http://zeljko.link
+
+---
+# Case 1: Attack of the Getters and Setters
+
+Q: how many times you have to write "person" to create person property?
+
+```java
+private Person person;
+
+public Person getPerson() {
+  return person;
+}
+
+void setPerson(Person person) {
+  this.person = person;
+}
+```
 
 ---
 # Thank you!
