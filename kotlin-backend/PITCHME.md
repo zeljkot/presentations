@@ -29,7 +29,7 @@ Support in popular frameworks
 ---
 # Case 1: Attack of the Getters and Setters
 
-Q: how many times you have to write "person" to create person property?
+Q: How many times you have to write "person" to create a person property?
 
 +++
 # Kotlin Entities
@@ -127,22 +127,6 @@ Note:
 -parameters stores formal parameter names of constructors and methods in the generated class file
 Required/nullable
 
----
-# Adding Kotlin to Build File
-```groovy
-plugins {
-    id "org.jetbrains.kotlin.jvm" version '1.2'
-}
-
-apply plugin: 'kotlin'
-apply plugin: 'war'
-
-description = 'My Server'
-
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
-```
 ---
 # Converting Entity Bean
 
@@ -243,7 +227,7 @@ Show decompiled code.
 
 ```kotlin
 @Entity
-data class KittenEntity private constructor(
+data class KittenEntity(
         @Id
         @GeneratedValue
         var id: Int?,
@@ -476,3 +460,21 @@ void setPerson(Person person) {
 
 ---
 # Thank you!
+
+
+---
+# Adding Kotlin to Build File
+```groovy
+plugins {
+    id "org.jetbrains.kotlin.jvm" version '1.2'
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'war'
+
+description = 'My Server'
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+```
