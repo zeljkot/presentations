@@ -1,5 +1,5 @@
 ﻿﻿
-![Javantura 2018](kotlin/javantura.png)
+![Javantura 2018](kotlin-backend/javantura.png)
 
 
 # Server-side Kotlin
@@ -76,6 +76,7 @@ class KittenController @Inject constructor(
 ```
 
 Note:
+No variables, minimal scope.
 Spring does not need parameter names
 Property @Inject is unnatural for Kotlin
 
@@ -88,24 +89,9 @@ Property @Inject is unnatural for Kotlin
 * available parameter names (usability depends on framework)
 
 ---
-# Case 3: Parameter names
+# Case 3: Parameter Names
 
-http://kitten.service/search?name=Garfield&weight=100
-
-```kotlin
-@GET
-fun add(
-    @QueryParam("name") name: String?,
-    @QueryParam("weight") weight: Double?
-): List<Kitten>
-```
-
-Note:
--parameters stores formal parameter names of constructors and methods in the generated class file
-Required/nullable
-
-+++
-# Jackson Immutable Classes 
+Jackson immutable class 
 
 ```kotlin
 data class KittenRest(
@@ -123,6 +109,23 @@ data class KittenRest(
   override val cuteness: Int
 ) : Kitten
 ```
+
+---
+# HTTP parameters
+
+http://kitten.service/search?name=Garfield&weight=100
+
+```kotlin
+@GET
+fun add(
+    @QueryParam("name") name: String?,
+    @QueryParam("weight") weight: Double?
+): List<Kitten>
+```
+
+Note:
+-parameters stores formal parameter names of constructors and methods in the generated class file
+Required/nullable
 
 ---
 # Adding Kotlin to Build File
