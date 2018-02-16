@@ -1,4 +1,4 @@
-﻿﻿![Logo](javantura.png)
+﻿﻿![Logo](kotlin/javantura.png)
 
 # Kotlin JEE
 
@@ -491,7 +491,19 @@ router {
 * Three and a half projects
 * Occasional problems with plugins
 * Converted frontend developers
+* Java is closing the gap
+* Kotlin guides you to better style
 
+Note:
+Java
+Java 8 on Android
+-parameters Java 8
+Stream functions Java 9
+JEP 286 (var) 10
+
+Kotlin
+Extension and inline functions
+Operator overloading
 ---
 # What Can You Do Now?
 
@@ -502,7 +514,7 @@ router {
 ---
 # Need more?
 
-Check three part series on
+Check three part series at
 http://zeljko.link
 
 ---
