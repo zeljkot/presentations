@@ -1,4 +1,6 @@
-﻿﻿# Kotlin JEE
+﻿﻿![Logo](javantura.png)
+
+# Kotlin JEE
 
 ## Željko Trogrlić
 
