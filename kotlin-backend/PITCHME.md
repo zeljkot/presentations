@@ -2,7 +2,7 @@
 ![Javantura 2018](kotlin/javantura.png)
 
 
-# Kotlin JEE
+# Server-side Kotlin
 
 ### Željko Trogrlić
 
