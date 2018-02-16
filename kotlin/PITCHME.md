@@ -1,8 +1,7 @@
-﻿﻿![Javantura 2018](kotlin/javantura.png)
+﻿﻿
+![Javantura 2018](kotlin/javantura.png)
 
 # Kotlin JEE
-
-![Javantura 2018x](kotlin/javantura.png)
 
 ## Željko Trogrlić
 
