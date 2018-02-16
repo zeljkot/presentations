@@ -5,16 +5,6 @@
 ## Željko Trogrlić
 
 ---
-# What is Kotlin?
-
-* Statically typed programming language for modern multiplatform applications 
-* Characteristics:
-  * Concise
-  * Safe
-  * Interoperable
-* Multiparadigm (object/functional)
-
----
 # Isn't it Just for the Android?
 
 * Until recently, Android supported Java 6 w/ extensions
@@ -24,37 +14,50 @@
 ---
 # Why Would I use It For Backend
 
+* Statically typed programming language for modern multiplatform applications 
+* Multiparadigm (object/functional)
 * Expressiveness
 * Safety
 * Java interoperability
-* Framework integration
+* Framework integration (Spring, Jackson)
 
 Note:
 Support in popular frameworks
 
 +++
-# Expresiveness
+# Expresiveness 1
+
+```java
+final List<String> names = new ArrayList<>();
+names.add("Pero");        
+```
 
 ```kotlin
-val counter = 6
+val names = listOf<String>("Pero")
+```
 
++++
+# Expresiveness 2
+
+```java
+String message;
+try {
+  message = getMessage();
+} catch (Exception ex){
+  message = ex.getMessage();
+}
+```
+
+```kotlin
 val message = try {
   getMessage()
 } catch (ex : Exception) {
   ex.message
 }
 ```
+
 ---
 # Case 1: Attack of the Getters and Setters
-
-* Properties
-* Data classes
- * equals(), hashCode(), toString()
-
-Note:
-Be careful with equals!
----
-# Example
 
 Q: how many times you have to write "person" to create person property?
 
@@ -87,6 +90,16 @@ data class KittenEntity(
 
 Note:
 No body
+
++++
+# Kotlin Features
+
+* Properties
+* Data classes
+ * equals(), hashCode(), toString()
+
+Note:
+Be careful with equals!
 
 ---
 # Case 2: Immutable, Functional Service Class
@@ -136,9 +149,24 @@ Note:
 Required/nullable
 
 +++
-# Jackson immutable classes 
+# Jackson Immutable Classes 
 
-Constructor mapping needs metadata.
+```kotlin
+data class KittenRest(
+  @param:JsonProperty("name")
+  override val name: String,
+  @param:JsonProperty("cuteness")
+  override val cuteness: Int
+) : Kitten
+```
+with the help of jackson-module-kotlin becomes
+
+```kotlin
+data class KittenRest(
+  override val name: String,
+  override val cuteness: Int
+) : Kitten
+```
 
 ---
 # Adding Kotlin to Build File
@@ -159,10 +187,109 @@ dependencies {
 ---
 # Converting Entity Bean
 
+```java
+@Entity
+public class KittenEntity
+    implements Kitten {
+
+  @Id
+  @GeneratedValue
+  private Integer id;
+  private String  name;
+  private int     cuteness;
+
+  protected KittenEntity() {
+  }
+
+  public KittenEntity(String name, int cuteness) {
+    this.name = name;
+    this.cuteness = cuteness;
+  }
+
+  public Integer getId() {
+    return this.id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return this.name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getCuteness() {
+    return this.cuteness;
+  }
+
+  public void setCuteness(int cuteness) {
+    this.cuteness = cuteness;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    KittenEntity that = (KittenEntity) o;
+
+    if (cuteness != that.cuteness) {
+      return false;
+    }
+    if (!id.equals(that.id)) {
+      return false;
+    }
+    return name.equals(that.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return id.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return "KittenEntity{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", cuteness=" + cuteness +
+        '}';
+  }
+}
+```
+
+---
+# Conversion Steps
+* Use automatic conversion
+* Remove all getters and setters
+* Remove toString()
+* Be careful with hashCode() and equals()
+
 Note:
 Remove getters and setters and standard Class methods.
 Show decompiled code.
 
+---
+# Result
+
+```kotlin
+@Entity
+data class KittenEntity private constructor(
+    @Id
+    @GeneratedValue
+    var id: Int?,
+    override var name: String,
+    override var cuteness: Int // set Int.MAX_VALUE for Nermal
+) : Kitten
+```
 ---
 # Kotlin class specifics
 * **Everything is final and public**
@@ -203,7 +330,7 @@ open class KittenBusinessService {
 ```
 
 ---
-# Evolution of Property @Inject
+# Evolution of Property @Inject / @Autowire
 
 ```kotlin
 protected val service: Service
@@ -211,6 +338,8 @@ protected val service: Service
 service.persist(kitten)
 ```
 
+Note:
+Explain evils of property injection.
 +++
 
 Must be nullable and mutable, so
@@ -239,6 +368,8 @@ protected lateinit var service: Service
 // ...
 service.persist(kitten)
 ```
+
+This is the way to go with EntityManager!
 
 ---
 # @Inject through Constructor
@@ -307,29 +438,6 @@ allOpen {
   annotation("javax.ejb.Stateless")
 }
 ```
-
----
-# Jackson Construction
-
-```kotlin
-data class KittenRest(
-  @param:JsonProperty("name")
-  override val name: String,
-  @param:JsonProperty("cuteness")
-  override val cuteness: Int
-) : Kitten
-```
-with the help of jackson-module-kotlin becomes
-
-```kotlin
-data class KittenRest(
-  override val name: String,
-  override val cuteness: Int
-) : Kitten
-```
-
-Note:
-Not a compiler plugin.
 
 ---
 # Support in Spring
