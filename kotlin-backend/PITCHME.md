@@ -7,13 +7,6 @@
 ### Željko Trogrlić
 
 ---
-# Isn't it Just for the Android?
-
-* Until recently, Android supported Java 6 w/ extensions
-* No streams, no closures
-* Kotlin provides everything, and more
-
----
 # Why Would I use It For Backend
 
 * Statically typed programming language for modern multiplatform applications 
@@ -359,6 +352,9 @@ This is the way to go with EntityManager!
 ```kotlin
 class KittenController @Inject constructor(
     private val service: Service) {
+
+  // ...
+  service.persist(kitten)
 ```
 
 * all necessary values are available at construction time
@@ -460,21 +456,3 @@ void setPerson(Person person) {
 
 ---
 # Thank you!
-
-
----
-# Adding Kotlin to Build File
-```groovy
-plugins {
-    id "org.jetbrains.kotlin.jvm" version '1.2'
-}
-
-apply plugin: 'kotlin'
-apply plugin: 'war'
-
-description = 'My Server'
-
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
-```
