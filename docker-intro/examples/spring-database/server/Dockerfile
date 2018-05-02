@@ -5,7 +5,7 @@ VOLUME /tmp
 
 WORKDIR /usr/src/sausage
 COPY build/libs/server.jar .
-COPY src/main/resources/application-default.yml config/.
+COPY build/resources/main/application-default.yml config/.
 
 EXPOSE 8080
 

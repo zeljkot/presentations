@@ -6,8 +6,8 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - .\server\build\libs:/usr/src/sausage
-      - .\server\src\main\resources:/usr/src/sausage/config
+      - ./server/build/libs:/usr/src/sausage
+      - ./server/build/resources/main/application-default.yml:/usr/src/sausage/config
     working_dir: /usr/src/sausage
     entrypoint:
       - java
